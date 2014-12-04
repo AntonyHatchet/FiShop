@@ -18,7 +18,7 @@ var ProductSchema = new Schema({
   pricing: {
     retail: { type: Number, required: true },
     sale: { type: Number},
-    cost: { type: Number},
+    cost: { type: Number}
   },
 
   details: {

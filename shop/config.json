@@ -1,6 +1,6 @@
 {
     
-    "connection" : "mongodb://test:test@dharma.mongohq.com:10013/nodeshop",
+    "connection" : "mongodb://127.0.0.1:27017/Shop",
     "cookie_secret" : "session secret",
     
     "store" : {

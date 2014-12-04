@@ -24,17 +24,18 @@ module.exports = {
         
         // Add listener for opened connection
         mongoose.connection.on('open', function() {
-            console.log('Connected to database!');
+            console.log('Connected to database!',dbToUse);
         });
     },
 
     // Get categories for top nav
-    getTopCategories: function(callback){ 
+    getTopCategories: function(callback){
         var query = Category.find({topnav : true});
-        query.exec(function(err, categories) { 
+        query.exec(function(err, categories) {
             
             // Execute callback
             callback(null, categories);
+            console.log('categ',categories);
         });
     },
   
@@ -47,7 +48,13 @@ module.exports = {
             
             // Execute callback
             callback(null, featuredProducts);
+            console.log('featuredProducts',featuredProducts);
         });
+    },
+
+    //Parse product from web
+    getWebProduct: function(category, callback){
+
     },
   
     // Get products in a category

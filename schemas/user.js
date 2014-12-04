@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // Require bcrypt for hashing passwords
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 
 // Define user schema
 var UserSchema = new Schema({
@@ -17,7 +17,6 @@ var UserSchema = new Schema({
     // Address
     address : {       
         address1: {type:String, required:false},
-        address2: {type:String, required:false},
         town: {type:String, required:false},
         province: {type:String, required:false},
         country: {type:String, required:false},
