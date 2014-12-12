@@ -4,12 +4,14 @@ block content
     hr
     .row
       .span6
-        img(src="http://placehold.it/420x320", alt="")
+        img(src= "#{product.image}")
       .span6
         hr
-        p Make:  #{product.make}
-        p Model:  #{product.model}
+        p Количество:  #{product.quantity}
+        p Модель:  #{product.model}
         hr
-        h3.pull-left £#{product.pricing.retail}
-        a(addId='#{product.id}').btn.btn-primary.btn-large.pull-right Add to cart
-        p {product.html}
+        h3.pull-left
+              h3 #{product.cost}
+                span.rouble i
+
+        a(addId='#{product.id}').btn.btn-primary.btn-large.pull-right Добавить в корзину

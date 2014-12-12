@@ -13,6 +13,7 @@ var database = require('./shop/data');
 var config = require('./shop/config.json');
 var info = require('./package.json');
 var bodyParser = require('body-parser');
+var converter = require('./lib/converter/converter');
 console.log('NodeShop Started!');
 
 // Connect to database

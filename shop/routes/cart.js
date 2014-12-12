@@ -89,5 +89,5 @@ module.exports = {
             // Respond with rendered cart
             res.render('cart/cart', {cart: req.session.cart});
 
-    },
+    }
 };

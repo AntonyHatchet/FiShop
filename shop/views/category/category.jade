@@ -6,9 +6,11 @@ block content
       each product in products
         li.span3
           a(href="/product/#{product.seo}").thumbnail
-            img(src="http://placehold.it/210x160", alt="")
+            img(src="#{product.image}", alt="")
             h6 #{product.name}
-              p.pull-right £#{product.pricing.retail}
+              p.pull-right
+                del P
+                p.pull-right #{product.cost}
 block scripts
   
   

@@ -6,7 +6,9 @@ var LocalStrategy = require('passport-local').Strategy;
 // Require data models
 var User = require('../schemas/user');
 var Product = require('../schemas/product');
-var Category = require("../schemas/category");
+var Category = require('../schemas/category');
+//var NewProduct = require('../schemas/newProduct');
+var parsedProduct = require('../lib/converter/converter');
 
 // Passport methods
 passport.use(new LocalStrategy({usernameField: 'email'},function(email, password, done) {User.authenticate(email, password, function(err, user) {return done(err, user)})}));
@@ -25,6 +27,17 @@ module.exports = {
         // Add listener for opened connection
         mongoose.connection.on('open', function() {
             console.log('Connected to database!',dbToUse);
+        });
+    },
+
+    saveProduct: function () {
+        console.log('parsedProduct');
+        parsedProduct.Product.save(function (err) {
+            if (err) {
+                throw err;
+            }
+            // Execute callback passed from route
+            callback(null, Product,console.log(Product,'err'));
         });
     },
 
@@ -50,11 +63,6 @@ module.exports = {
             callback(null, featuredProducts);
             console.log('featuredProducts',featuredProducts);
         });
-    },
-
-    //Parse product from web
-    getWebProduct: function(category, callback){
-
     },
   
     // Get products in a category
@@ -150,11 +158,13 @@ module.exports = {
             
             // Execute callback passed from route
             callback(null, newUser);
-        });
+
+
+      });
     },
 
     // Close DB connection
     closeDB: function() {
-        mongoose.disconnect();
+        mongoose.disconnect(console.log('connect closed'));
     }
 };

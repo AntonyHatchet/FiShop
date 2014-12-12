@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var ProductSchema = new Schema({
     
   name: { type: String, required: true },
-  make: { type: String},
+  quantity: { type: Number},
   model: { type: String},
   category: { type: String},
   seo: { type: String},
@@ -14,19 +14,15 @@ var ProductSchema = new Schema({
   upc: { type: String},
   featured: { type: Boolean},
   date: { type: Date, default: Date.now },
-  
-  pricing: {
-    retail: { type: Number, required: true },
-    sale: { type: Number},
-    cost: { type: Number}
-  },
+  cost: { type: Number},
 
   details: {
     description: { type: String},
     attributes: [{ type: String}]
   },
   
-  image: [{ type: String}]
+  image: { type: String}
+
   
 });
 
