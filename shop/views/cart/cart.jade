@@ -11,9 +11,11 @@
         ul.dropdown-menu
             each product in cart.products
                 li
-                  a(href='/product/#{product.seo}') 
-                    i(remId='#{product.id}').icon-remove.pull-right
+                  a(href='/product/#{product.seo}')
                     | #{product.name}
+                    | - #{product.quantity}
+                  i(remId='#{product.id}').icon-remove.pull-right.cart-icon-remove
+
             li.divider
             li
               a(href='/checkout/cart') Checkout

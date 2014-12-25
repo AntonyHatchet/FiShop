@@ -28,7 +28,7 @@ module.exports = {
                 req.session.cart.products[req.params.id] = {
                     id: product.id,
                     name: product.name,
-                    price: product.pricing.retail,
+                    price: product.cost,
                     seo: product.seo,
                     quantity: 1  
                 };

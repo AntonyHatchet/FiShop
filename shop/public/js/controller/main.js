@@ -26,6 +26,18 @@ $(document).ready(function() {
         e.preventDefault();
         e.stopPropagation();
     });
-    
+
+    $(document).on('click', ".glyphicon", function(e) {
+        var quantity = $(".count").val();
+        if ($(this).hasClass("glyphicon-minus")){
+            if (quantity > 0){
+            $(".count").val(parseInt(quantity) -1)}
+        }else
+        if ($(this).hasClass("glyphicon-plus")){
+            $(".count").val(parseInt(quantity) + 1);
+        }
+        e.preventDefault();
+        e.stopPropagation();
+    });
 });
 

@@ -15,13 +15,16 @@ block content
             tr
               td  
                 a(href='/product/#{product.seo}') #{product.name}
-              td  £#{product.price}
-              td= product.quantity
-              td 
-                i.icon-remove
+              td  #{product.price}
+                  span.rouble i
+              td
+                |#{product.quantity}
+              td
+                i(remId='#{product.name}').icon-remove
   .row
      .pull-right
-        h4 Total: £#{cart.total}
+        h4 Total: #{cart.total}
+            span.rouble i
         if (!locals.logged)
             a(href="/checkout/guest").btn.btn-primary Continue As Guest
         else

@@ -13,5 +13,10 @@ block content
         h3.pull-left
               h3 #{product.cost}
                 span.rouble i
+        hr
+        .spiner
+            i.glyphicon.glyphicon-minus
+            input.count(value="1" min="0")
+            i.glyphicon.glyphicon-plus
 
         a(addId='#{product.id}').btn.btn-primary.btn-large.pull-right Добавить в корзину

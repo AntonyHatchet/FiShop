@@ -79,7 +79,7 @@ module.exports = {
                 title: 'Your Order',
                 logged: req.isAuthenticated(),
                 user: req.user,
-                cart: req.session.cart,
+                cart: req.session.cart
             });
     },
     
@@ -88,5 +88,5 @@ module.exports = {
         
         
 
-    },
+    }
 };

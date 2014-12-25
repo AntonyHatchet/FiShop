@@ -12,19 +12,60 @@ body
         src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'),
              url('../fonts/rouble-webfont.woff') format('woff'),
              url('../fonts/rouble-webfont.ttf') format('truetype');
-
 .rouble
-    font-family: 'rouble';
+  font-family: 'rouble';
 
+@font-face
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+
+.glyphicon
+  position relative
+  top 1px
+  display inline-block
+  font-family 'Glyphicons Halflings'
+  font-style normal
+  font-weight normal
+  line-height 1
+  font-size 2em
+  cursor pointer
+
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.glyphicon-plus:before
+  content "\2b"
+
+.glyphicon-minus:before
+  content "\2212"
 
 .thumbnail h6 p
-    color:#333;
+    color #333
 
 
 .container > a
-    margin-top: 10px;
-    margin-bottom: 10px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    margin-top 10px
+    margin-bottom 10px
+    align-items center
+    display flex
+    flex-direction row
+    justify-content center
+
+.cart-icon-remove
+    margin-right 3px
+    margin-top -20px
+
+.spinner
+  width 100px
+
+.count
+  font-size 3em
+  font-weight bold
+  vertical-align baseline
+  width 30px
+  border none
+  text-align center

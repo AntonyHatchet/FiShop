@@ -15,13 +15,15 @@ block content
             tr
               td  
                 a(href='/product/#{product.seo}') #{product.name}
-              td  £#{product.price}
+              td  #{product.price}
+                  span.rouble i
               td= product.quantity
               td 
                 i.icon-remove
   .row
      .pull-right
-        h4 Total: £#{cart.total}
+        h4 Total: #{cart.total}
+            span.rouble i
   .row
     h2 Address
     hr

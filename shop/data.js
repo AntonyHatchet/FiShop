@@ -8,7 +8,7 @@ var User = require('../schemas/user');
 var Product = require('../schemas/product');
 var Category = require('../schemas/category');
 //var NewProduct = require('../schemas/newProduct');
-var parsedProduct = require('../lib/converter/converter');
+//var parsedProduct = require('../lib/converter/converter');
 
 // Passport methods
 passport.use(new LocalStrategy({usernameField: 'email'},function(email, password, done) {User.authenticate(email, password, function(err, user) {return done(err, user)})}));

@@ -7,21 +7,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var parsedProduct = require('../lib/converter/converter');
 
-console.log(parsedProduct.Product,'jsonparsed2');
+console.log(parsedProduct.Product[0],'jsonparsed2');
 
 //var json = parsedProduct.Product,
    // obj = JSON && JSON.parse(json) || $.parseJSON(json);
 
 //console.log(obj.name,'jsonparsed3');
 
-module.exports = {
-
- toBase: function(){
-     for (i in parsedProduct.Product){
-
-     }
- }
-};
 
 var NewProductSchema = new Schema({
     name: { type: String, required: true },
