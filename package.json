@@ -17,7 +17,9 @@
     "request": "*",
     "underscore": "*",
     "xls-to-json": "^0.3.2",
-    "xlsjs": "^0.7.2"
+    "xlsjs": "^0.7.2",
+    "bcryptjs": "*",
+    "body-parser": "*"
   },
   "devDependencies": {
     "gulp": "^3.8.10",
