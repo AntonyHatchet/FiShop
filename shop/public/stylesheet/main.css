@@ -63,3 +63,36 @@ body {
   border: none;
   text-align: center;
 }
+.categories {
+  text-align: center;
+  list-style: outside none none;
+  padding-bottom: calc(364 * (100% / 1160));
+  position: relative;
+}
+.categories .small {
+  width: calc(15% - 13px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+.categories .average {
+  width: calc(35% - 13px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+.categories .big {
+  width: calc(50% - 13px);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+}
+.categories .left {
+  left: 0;
+}
+.categories .middle {
+  left: 15%;
+}
+.categories .right {
+  left: 50%;
+}

@@ -7,8 +7,10 @@ var CategorySchema = new Schema({
     
     name: { type: String, required: true },
     seo: { type: String, required: true },
-    topnav: { type: Boolean, required: false, default: true }
-    
+    topnav: { type: Boolean, required: false, default: true },
+    image: { type: String},
+    showcase:{type: String, default: ""},
+    showcasePosition:{type: String, default: ""}
     });
   
 // Export category model

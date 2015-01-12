@@ -4,6 +4,12 @@ block content
     img(src="/img/style/930x160.png", alt="")
   hr
   h4 Featured
+  ul.categories
+      each category in categories
+          li(class="#{category.showcase}  #{category.showcasePosition}")
+              a(href="/category/#{category.seo}").thumbnail
+                  img(src="#{category.image}", alt="")
+                  | #{category.name}
   ul.thumbnails
       each product in featured
         li.span3
