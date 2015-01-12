@@ -1,6 +1,6 @@
 // Require needed modules
 var db = require('../data');
-var config = require("../config.json");
+var config = require("../../config/config.js")();
 
 // Export functions
 module.exports = {

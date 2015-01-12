@@ -1,5 +1,5 @@
 var db = require("../data");
-var config = require("../config.json");
+var config = require("../../config/config.js")();
 var passport = require('passport');
 
 // Export functions

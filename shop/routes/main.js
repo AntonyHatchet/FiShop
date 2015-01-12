@@ -1,13 +1,12 @@
 // Require needed modules
 var db = require('../data'),
-config = require('../config.json');
+config = require('../../config/config.js')();
 
 // Export functions
 module.exports = {
 
     // Get shop home page
     getHome: function(req, res) {
-        
         // Get categories for top nav
         db.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
@@ -66,5 +65,5 @@ module.exports = {
                 categories: categories,
             });
         });
-    },
+    }
 };
