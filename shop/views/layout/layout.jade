@@ -8,7 +8,7 @@ html(lang="en")
     .modal.hide.fade#modal
     .navbar.navbar-static-top
         .navbar-inner
-          .container
+          .container-fluid
             ul.nav
               li
                 a(href="/") Home
@@ -28,8 +28,8 @@ html(lang="en")
                   a(href="/account/logout") Logout
             #cart
               include ../cart/cart
-    .container
-      a(href="/")
+    .container-fluid
+      a(href="/" , class="offset5")
         img(src="/img/style/header.png")
       .navbar
         .navbar-inner

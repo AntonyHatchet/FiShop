@@ -1,9 +1,5 @@
 extends ../layout/layout
 block content
-  a(href="#").thumbnail
-    img(src="/img/style/930x160.png", alt="")
-  hr
-  h4 Featured
   ul.categories
       each category in categories
           li(class="#{category.showcase}  #{category.showcasePosition}")

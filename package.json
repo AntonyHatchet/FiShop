@@ -10,7 +10,6 @@
     "express-session": "^1.9.2",
     "jade": "*",
     "mongoose": "*",
-    "node-gyp": "^1.0.2",
     "passport": "*",
     "passport-local": "*",
     "querystring": "*",
