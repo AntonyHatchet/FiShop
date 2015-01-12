@@ -10,7 +10,8 @@ block content
           a(href="/product/#{product.seo}").thumbnail
             img(src="http://placehold.it/210x160", alt="")
             h6 #{product.name}
-              p.pull-right £#{product.pricing.retail}
+              p.pull-right #{product.cost}
+                  span.rouble i
 block scripts
   
   
