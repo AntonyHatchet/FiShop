@@ -3,7 +3,7 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var MongoStore = require('connect-mongo')(expressSession);
-var errorhandler = require('errorhandler')
+var errorhandler = require('errorhandler');
 // Set up express
 var app = express();
 // Require mongostore session storage
@@ -21,7 +21,8 @@ app.set('views', __dirname + '/shop/views');
 app.set('view engine', 'jade');
 app.use(cookieParser());
 // app.use(express.favicon());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // Set up sessions
 app.use(expressSession({
     // Set up MongoDB session storage
@@ -29,7 +30,9 @@ app.use(expressSession({
     // Set session to expire after 21 days
     cookie: { maxAge: new Date(Date.now() + 181440000)},
     // Get session secret from config file
-    secret: config.mongo.cookie_secret
+    secret: config.mongo.cookie_secret,
+    resave: false,
+    saveUninitialized: true
 }));
 
 // Set up passport
