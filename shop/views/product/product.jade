@@ -1,10 +1,10 @@
-extend layout
+extend ../layout/layout
 block content
     h2 #{product.name}
     hr
     .row
       .span6
-        img(src= "#{product.image}")
+        img(src= "#{product.image}", alt="")
       .span6
         hr
         p Количество:  #{product.quantity}
@@ -16,7 +16,7 @@ block content
         hr
         .spiner
             i.glyphicon.glyphicon-minus
-            input.count(value="1" min="0")
+            input.count(value="1")
             i.glyphicon.glyphicon-plus
 
         a(addId='#{product.id}').btn.btn-primary.btn-large.pull-right Добавить в корзину
