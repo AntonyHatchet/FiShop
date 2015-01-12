@@ -1,4 +1,5 @@
 // Require express
+console.log("Starting up...");
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
@@ -15,7 +16,6 @@ var config = require('./config/config.js')();
 var info = require('./package.json');
 var bodyParser = require('body-parser');
 var converter = require('./lib/converter/converter');
-
 // Set up jade
 app.set('views', __dirname + '/shop/views');
 app.set('view engine', 'jade');
