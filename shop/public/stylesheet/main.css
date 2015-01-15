@@ -76,7 +76,6 @@ body {
 .categories .small {
   width: calc(20% - 13px);
   background-color: #cfc;
-  min-height: 249px;
 }
 .categories .average {
   width: calc(40% - 13px);
