@@ -1,6 +1,6 @@
 {
-  "name": "NodeShop",
-  "version": "0.0.6",
+  "name": "FiShop",
+  "version": "0.0.9",
   "dependencies": {
     "connect-mongo": "*",
     "converter": "0.0.5",

@@ -24,7 +24,7 @@ module.exports = function(a, p) {
     a.get('/contact', main.getContact);
 
     // Control Panel routes
-    a.get('/users', controlPanel.getControlPanelUsers);
+    a.get('/admin/users', controlPanel.getControlPanelUsers);
     
     // Modal routes
     a.get('/modals/register', modals.getRegister);

@@ -11,7 +11,11 @@ module.exports = {
     getControlPanelUsers: function(req, res) {
         // Get categories for top nav
                 // Render home page
-                res.render('admin/users', {
-                });
+        db.getAllUsersList(function(Users){
+            res.render('admin/users', {
+                users: Users
+            });
+        })
+
     }
 };
