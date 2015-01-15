@@ -1,4 +1,17 @@
-//
-   Created by shtefan on 16.01.15.
-
-h1 something:  #{users}
+extends layout
+block content
+ .users-wrapper
+    form
+        span User
+            ul
+               li
+                 a(href="/") Add user
+               li
+                 a(href="/") Add usergroup
+               li
+                 a(href="/") Remove user
+               li
+                 a(href="/") Remove usergroup
+            each user in users
+                ul
+                     li #{user.email}
