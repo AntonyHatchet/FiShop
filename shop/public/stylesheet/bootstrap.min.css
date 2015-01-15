@@ -4899,7 +4899,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 .thumbnail > img {
     display: inline-block;
     max-width: 100%;
-    max-height: 241px;
+    max-height: 181px;
     margin-right: auto;
     margin-left: auto
 }
