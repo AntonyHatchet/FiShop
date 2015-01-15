@@ -70,7 +70,7 @@ body {
 }
 .categories li {
   overflow: hidden;
-  display: inline-block;
+  display: inline-table;
   margin: 5px;
 }
 .categories .small {
