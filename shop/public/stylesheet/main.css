@@ -69,30 +69,16 @@ body {
   padding-bottom: calc(364 * (100% / 1160));
   position: relative;
 }
-.categories .small {
-  width: calc(15% - 13px);
+.categories li {
   overflow: hidden;
-  position: absolute;
-  top: 0;
+  display: inline-block;
+}
+.categories .small {
+  width: calc(20% - 13px);
 }
 .categories .average {
-  width: calc(35% - 13px);
-  overflow: hidden;
-  position: absolute;
-  top: 0;
+  width: calc(40% - 13px);
 }
 .categories .big {
-  width: calc(50% - 13px);
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-}
-.categories .left {
-  left: 0;
-}
-.categories .middle {
-  left: 15%;
-}
-.categories .right {
-  left: 50%;
+  width: calc(60% - 13px);
 }
