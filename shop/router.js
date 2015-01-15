@@ -6,6 +6,7 @@ var product = require('./routes/product');
 var cart = require('./routes/cart');
 var category = require('./routes/category');
 var checkout = require('./routes/checkout');
+var controlPanel = require('./routes/admin');
 
 // Function to only allow acess if authenticated
 function ensureAuthenticated(req, res, next) {
@@ -21,6 +22,9 @@ module.exports = function(a, p) {
     a.get('/', main.getHome);
     a.get('/about', main.getAbout);
     a.get('/contact', main.getContact);
+
+    // Control Panel routes
+    a.get('/users', controlPanel.getControlPanelUsers);
     
     // Modal routes
     a.get('/modals/register', modals.getRegister);
