@@ -1,11 +1,12 @@
 extends ../layout/layout
 block content
-  ul.categories
-      each category in categories
-          li(class="#{category.showcase}  #{category.showcasePosition}")
-              a(href="/category/#{category.seo}").thumbnail
-                  img(src="#{category.image}", alt="")
-                  | #{category.name}
+  .wraper
+      ul.categories
+          each category in categories
+              li(class="#{category.showcase}  #{category.showcasePosition}")
+                  a(href="/category/#{category.seo}").thumbnail
+                      img(src="#{category.image}", alt="")
+                      | #{category.name}
   ul.thumbnails
       each product in featured
         li.span3

@@ -66,19 +66,23 @@ body {
 .categories {
   text-align: center;
   list-style: outside none none;
-  padding-bottom: calc(364 * (100% / 1160));
   position: relative;
 }
 .categories li {
   overflow: hidden;
   display: inline-block;
+  margin: 5px;
 }
 .categories .small {
   width: calc(20% - 13px);
+  background-color: #cfc;
+  min-height: 249px;
 }
 .categories .average {
   width: calc(40% - 13px);
+  background-color: #ffc;
 }
 .categories .big {
   width: calc(60% - 13px);
+  background-color: #c6c;
 }
