@@ -7,13 +7,21 @@ var bcrypt = require('bcryptjs');
 
 // Define user schema
 var UserSchema = new Schema({
-    
+
     // Name
     name : { 
         first: { type: String, required: true },
         last: { type: String, required: true }
     },
-    
+    group : {type : String, required: true},
+    contactNum: {type: Number, required: false},
+    email: { type: String, required: true, unique: true },
+    salt: { type: String, required: true },
+    hash: { type: String, required: true },
+    visits: {
+        lastVisit:  {type: Date, required:false},
+        allVisits: {type: Date, required:false}
+    },
     // Address
     address : {       
         address1: {type:String, required:false},
@@ -22,11 +30,12 @@ var UserSchema = new Schema({
         country: {type:String, required:false},
         pcd: {type:String, required:false}
     },
-    
-    contactNum: {type: Number, required: false},
-    email: { type: String, required: true, unique: true },
-    salt: { type: String, required: true },
-    hash: { type: String, required: true }
+    shoppingHistory: {
+        product : {type:String, required:false},
+        date : {type: Date, required:false}
+    },
+    bonusPoints : {type: Number, required:false},
+    referalLink : {type: String, required:false}
   });
 
 // Create virtuals for passowrd

@@ -1,5 +1,5 @@
 // Require needed modules
-var db = require('../data');
+var db = require('../dbMagic/data');
 var _ = require('underscore');
 
 // Export functions

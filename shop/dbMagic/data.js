@@ -4,9 +4,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 // Require data models
-var User = require('../schemas/user');
-var Product = require('../schemas/product');
-var Category = require('../schemas/category');
+var User = require('../../schemas/user');
+var Product = require('../../schemas/product');
+var Category = require('../../schemas/category');
 //var NewProduct = require('../schemas/newProduct');
 //var parsedProduct = require('../lib/converter/converter');
 
@@ -159,6 +159,24 @@ module.exports = {
 
       });
     },
+
+    getAllUsersList: function (callback) {
+        User.find({}, function (err, allUsersList) {
+                if (err) {throw err;}
+                callback(allUsersList);
+            }
+        )
+    },
+
+    getUsersListByRange: function (startFrom, limit, callback) {
+        //TODO: Написать валидацию вводимых данных.
+        User.find({}).skip(startFrom).limit(limit).exec(function (err, usersListRange) {
+                if (err) {throw err;}
+                callback(usersListRange);
+            }
+        )
+    },
+
 
     // Close DB connection
     closeDB: function() {

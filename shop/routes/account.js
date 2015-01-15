@@ -1,4 +1,4 @@
-var db = require('../data');
+var db = require('../dbMagic/data');
 var config = require('../../config/config.js')();
 var passport = require('passport');
 
@@ -78,5 +78,5 @@ module.exports = {
         // Redirect to home page
         res.redirect('/');
     
-    },
+    }
 };

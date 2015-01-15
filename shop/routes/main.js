@@ -1,5 +1,5 @@
 // Require needed modules
-var db = require('../data'),
+var db = require('../dbMagic/data.js'),
 config = require('../../config/config.js')();
 
 // Export functions
@@ -7,6 +7,9 @@ module.exports = {
 
     // Get shop home page
     getHome: function(req, res) {
+        db.getUsersListByRange(0, 0, function(allUsersList){
+            console.log(allUsersList);
+        });
         // Get categories for top nav
         db.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
