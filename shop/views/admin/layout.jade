@@ -1,32 +1,20 @@
 doctype html
 html(lang="en")
   head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="keyword" content="")
     title #{store} | #{title}
-    link(href="/stylesheet/bootstrap.min.css", rel="stylesheet")
     link(href="/stylesheet/main.css", rel="stylesheet")
+    link(href="/stylesheet/bootstrap.css", rel="stylesheet")
+    link(href="/stylesheet/style.css", rel="stylesheet")
+    link(href="/stylesheet/style-responsive.css", rel="stylesheet")
+    link(href="/stylesheet/zabuto_calendar.css", rel="stylesheet")
+    link(href="/font-awesome/css/font-awesome.css", rel="stylesheet")
+    stile
   body
-    .modal.hide.fade#modal
-    .navbar-inverse.navbar-static-top.navbar
-          .container
-            ul.nav
-              li
-                a(href="/") Home
-              li
-                a(href="/about") About
-              li
-                a(href="/contact") Contact
-              if (!locals.logged)
-                li
-                  a(data-toggle="modal", data-target="#modal", href="/modals/register") Register
-                li
-                  a(data-toggle="modal", data-target="#modal", href="/modals/login") Login 
-              else
-                li
-                  a(href="/account/home") Account
-                li       
-                  a(href="/account/logout") Logout
-    .container
-      .main
+      section#container
+        header.header.black-bg
         block content
       hr
     script(src="http://code.jquery.com/jquery.min.js", type="text/javascript")

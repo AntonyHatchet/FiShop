@@ -4175,7 +4175,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
     }
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
-    color: #999;
+    color: #f0f0f0;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
 }
 
