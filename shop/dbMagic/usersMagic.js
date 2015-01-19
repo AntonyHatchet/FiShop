@@ -80,10 +80,10 @@ getUsersListByRange: function (startFrom, limit, callback) {
     )
 },
 
-saveUsersGroup: function (userGroupInfo, callback) {
+saveUsersGroup: function (name, permitURL, callback) {
     var newUsersGroup = new userGroup ({
-        name : userGroupInfo.name,
-        permit: userGroupInfo.permitURL
+        name : name,
+        permit: permitURL
     });
     // Save into database
     newUsersGroup.save(function(err) {
@@ -96,6 +96,16 @@ saveUsersGroup: function (userGroupInfo, callback) {
     updateUsersGroup: function (name, permit) {
         User.update ({name: name}, {permit : permit}, function(err){
             if (err) {throw err;}
+        });
+    },
+
+    findUsersGroupByID: function (id, callback) {
+
+        // Find product where _id matches given ID
+        var query = userGroup.findOne({_id: id});
+        query.exec(function (err, userGroup) {
+            // Execute callback passed from route
+            callback(userGroup);
         });
     }
 };

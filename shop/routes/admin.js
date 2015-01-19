@@ -21,6 +21,25 @@ module.exports = {
         // Get categories for top nav
         // Render home page
         res.render('admin/dashboard', {});
+        //dbUsersMagic.findUsersGroupByID(req.user.group, function(data){
+        //    if (!data){
+        //        dbUsersMagic.getAllUsersList(function(Users){
+        //            res.render('admin/users', {
+        //                users: Users
+        //            });
+        //        })
+        //    }
+        //    if (data.name == "administrators"){
+        //        res.render('admin/dashboard', {});
+        //    } else {
+        //        dbUsersMagic.getAllUsersList(function(Users){
+        //            res.render('admin/users', {
+        //                users: Users
+        //            });
+        //        })
+        //    }
+        //});
+
 
     }
 };
