@@ -32,6 +32,14 @@ module.exports = {
         });
     },
 
+    updateCategory: function (categoryId, data) {
+        Category.update ({_id: categoryId}, {
+            isShow : data.isShown,
+            position: data.position}, function(err){
+            if (err) {throw err;}
+        });
+    },
+
     removeCategory: function (categoryId) {
         Category.remove ({_id: categoryId}, function(err){
             if (err) {throw err;}
