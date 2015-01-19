@@ -2,8 +2,7 @@
  * Created by shtefan on 16.01.15.
  */
 
-var db = require('../dbMagic/data.js'),
-config = require('../../config/config.js')();
+var dbUsersMagic = require('../dbMagic/usersMagic.js');
 
 module.exports = {
 
@@ -11,7 +10,7 @@ module.exports = {
     getControlPanelUsers: function(req, res) {
         // Get categories for top nav
                 // Render home page
-        db.getAllUsersList(function(Users){
+        dbUsersMagic.getAllUsersList(function(Users){
             res.render('admin/users', {
                 users: Users
             });

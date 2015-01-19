@@ -1,5 +1,6 @@
 // Require needed modules
-var db = require('../dbMagic/data');
+
+var dbProductMagic = require('../dbMagic/productMagic');
 var config = require('../../config/config.js')();
 
 // Export functions
@@ -9,11 +10,11 @@ module.exports = {
     getBySEO: function(req, res) {
     
         // Get categories for top nav
-        db.getTopCategories(function(err, categories) { 
+        dbProductMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err);}
         
             // Get the products from selected category
-            db.getCategoryProducts(req.params.seo, function(err, products, category) { 
+            dbProductMagic.getCategoryProducts(req.params.seo, function(err, products, category) {
                 
                 if (err) {
                     

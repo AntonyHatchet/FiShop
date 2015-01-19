@@ -1,5 +1,5 @@
 // Require needed modules
-var db = require('../dbMagic/data');
+var dbUsersMagic = require('../dbMagic/usersMagic.js');
 var _ = require('underscore');
 
 // Export functions
@@ -9,7 +9,7 @@ module.exports = {
     addProduct: function(req, res) {
         try {
         // Get product from database for given id
-        db.findProductByID(req.params.id, function(err, product) { 
+            dbUsersMagic.findProductByID(req.params.id, function(err, product) {
             if (err) {console.log(err)}
             
             // Initalise cart

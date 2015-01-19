@@ -1,5 +1,3 @@
-var db = require('../dbMagic/data');
-var config = require('../../config/config.js')();
 
 module.exports = {
 

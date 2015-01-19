@@ -11,7 +11,7 @@ var app = express();
 //var mongoStore = require('connect-mongo')(expressSession);
 var passport = require('passport');
 // Require needed files
-var database = require('./shop/dbMagic/data.js');
+var database = require('./shop/dbMagic/dbInit.js');
 var config = require('./config/config.js')();
 var info = require('./package.json');
 var bodyParser = require('body-parser');

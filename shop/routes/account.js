@@ -1,14 +1,14 @@
-var db = require('../dbMagic/data');
+var dbProductMagic = require('../dbMagic/dbInit');
+var dbUsersMagic = require('../dbMagic/usersMagic.js');
 var config = require('../../config/config.js')();
 var passport = require('passport');
 
 module.exports = {
-    
+
     // Handle posted register form
     postRegister: function(req, res) {
-    
         // Save user in database
-        db.saveUser({
+        dbUsersMagic.saveUser({
                 fname : req.param('name.first'),
                 lname : req.param('name.last'),
                 email : req.param('email'),
@@ -35,7 +35,7 @@ module.exports = {
     getRegistered: function(req, res) {
         
         // Get categories for top nav
-        db.getTopCategories(function(err, categories) {
+        dbProductMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render registered page
@@ -45,16 +45,15 @@ module.exports = {
                 logged: req.isAuthenticated(),
                 user: req.user,
                 cart: req.session.cart,
-                categories: categories,
+                categories: categories
             });
         });
     },
 
     // Get account page
     getAccount: function(req, res) {
-        
         // Get categories for top nav
-        db.getTopCategories(function(err, categories) {
+        dbProductMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render account page
@@ -64,7 +63,7 @@ module.exports = {
                 logged: req.isAuthenticated(),
                 user: req.user,
                 cart: req.session.cart,
-                categories: categories,
+                categories: categories
             });
         });
     },

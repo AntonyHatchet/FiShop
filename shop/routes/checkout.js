@@ -1,4 +1,4 @@
-var db = require("../dbMagic/data");
+var db = require("../dbMagic/dbInit");
 var config = require("../../config/config.js")();
 var passport = require('passport');
 
@@ -12,7 +12,7 @@ module.exports = {
                 title: 'Your Cart',
                 logged: req.isAuthenticated(),
                 user: req.user,
-                cart: req.session.cart,
+                cart: req.session.cart
             });
     },
     
@@ -27,7 +27,7 @@ module.exports = {
                 title: 'Guest Checkout',
                 logged: req.isAuthenticated(),
                 user: req.user,
-                cart: req.session.cart,
+                cart: req.session.cart
                 });
                 
             } else {

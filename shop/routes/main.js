@@ -1,5 +1,5 @@
 // Require needed modules
-var db = require('../dbMagic/data.js'),
+var dbProductMagic = require('../dbMagic/productMagic');
 config = require('../../config/config.js')();
 
 // Export functions
@@ -8,11 +8,11 @@ module.exports = {
     // Get shop home page
     getHome: function(req, res) {
         // Get categories for top nav
-        db.getTopCategories(function(err, categories) {
+        dbProductMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Get featured products
-            db.getFeatured(function(err, featured) { 
+            dbProductMagic.getFeaturedProducts(function(err, featured) {
                 if (err) {console.log(err)}
                 
                 // Render home page
@@ -33,7 +33,7 @@ module.exports = {
     getAbout: function(req, res) {
         
         // Get categories for top nav
-        db.getTopCategories(function(err, categories) {
+        dbProductMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render contact page
@@ -43,7 +43,7 @@ module.exports = {
                 logged: req.isAuthenticated(),
                 user: req.user,
                 cart: req.session.cart,
-                categories: categories,
+                categories: categories
             });
         });
     },
@@ -52,7 +52,7 @@ module.exports = {
     getContact: function(req, res) {
         
         // Get categories for top nav
-        db.getTopCategories(function(err, categories) {
+        dbProductMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render contact page
@@ -62,7 +62,7 @@ module.exports = {
                 logged: req.isAuthenticated(),
                 user: req.user,
                 cart: req.session.cart,
-                categories: categories,
+                categories: categories
             });
         });
     }

@@ -13,7 +13,7 @@ var UserSchema = new Schema({
         first: { type: String, required: true },
         last: { type: String, required: true }
     },
-    group : {type : String, required: true},
+    group : {type : String, required: false},
     contactNum: {type: Number, required: false},
     email: { type: String, required: true, unique: true },
     salt: { type: String, required: true },
