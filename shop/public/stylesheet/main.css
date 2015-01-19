@@ -1,3 +1,8 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 @import url("http://fonts.googleapis.com/css?family=Open\+Sans");
 body {
   background-color: #fff;
@@ -68,20 +73,34 @@ body {
   list-style: outside none none;
   position: relative;
 }
-.categories li {
-  overflow: hidden;
-  display: inline-table;
-  margin: 5px;
+
+/* clearfix */
+.categories:after {
+    content: ' ';
+    display: block;
+    clear: both;
 }
-.categories .small {
-  width: calc(20% - 13px);
-  background-color: #cfc;
+
+.item {
+    width: 272.5px;
+    height: 198px;
+    float: left;
+    background: #C09;
+    overflow: hidden;
 }
-.categories .average {
-  width: calc(40% - 13px);
-  background-color: #ffc;
+
+.item:hover {
+    border-color: white;
+    cursor: move;
 }
-.categories .big {
-  width: calc(60% - 13px);
-  background-color: #c6c;
+
+.item.w2 { width:  559px; background: #9C0; }
+.item.h2 { height: 411px; background: #0C9; }
+.item.h4 { height: 626px; background: #90C; }
+
+.item.is-dragging,
+.item.is-positioning-post-drag {
+    border-color: white;
+    background: #09F;
+    z-index: 2;
 }

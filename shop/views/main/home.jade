@@ -1,12 +1,12 @@
 extends ../layout/layout
 block content
   .wraper
+      button.draganddrop drag
       ul.categories
           each category in categories
-              li(class="#{category.showcase}  #{category.showcasePosition}")
+              li(class="item #{category.showcase}  #{category.showcasePosition}")
                   a(href="/category/#{category.seo}").thumbnail
                       img(src="#{category.image}", alt="")
-                      | #{category.name}
   ul.thumbnails
       each product in featured
         li.span3
@@ -16,5 +16,8 @@ block content
               p.pull-right #{product.cost}
                   span.rouble i
 block scripts
-  
+    script(src="/js/plugins/packery.pkgd.min.js")
+    script(src="/js/plugins/draggabilly.pkgd.min.js")
+    script(src="/js/plugins/packery.js")
+
   

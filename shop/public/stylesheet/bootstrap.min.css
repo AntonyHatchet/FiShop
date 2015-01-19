@@ -4887,7 +4887,6 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 
 .thumbnail {
     display: block;
-    padding: 4px;
     line-height: 20px;
     border: 0 none;
     -webkit-transition: all .2s ease-in-out;
@@ -4899,7 +4898,6 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 .thumbnail > img {
     display: block;
     max-width: 100%;
-    max-height: 150px;
     margin-right: auto;
     margin-left: auto
 }
