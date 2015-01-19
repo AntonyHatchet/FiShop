@@ -1,4 +1,4 @@
-var dbProductMagic = require('../dbMagic/dbInit');
+var dbCategoryMagic = require('../dbMagic/categoryMagic');
 var dbUsersMagic = require('../dbMagic/usersMagic.js');
 var config = require('../../config/config.js')();
 var passport = require('passport');
@@ -35,7 +35,7 @@ module.exports = {
     getRegistered: function(req, res) {
         
         // Get categories for top nav
-        dbProductMagic.getTopCategories(function(err, categories) {
+        dbCategoryMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render registered page
@@ -53,7 +53,7 @@ module.exports = {
     // Get account page
     getAccount: function(req, res) {
         // Get categories for top nav
-        dbProductMagic.getTopCategories(function(err, categories) {
+        dbCategoryMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render account page

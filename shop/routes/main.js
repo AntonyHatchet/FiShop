@@ -1,5 +1,6 @@
 // Require needed modules
 var dbProductMagic = require('../dbMagic/productMagic');
+var dbCategoryMagic = require('../dbMagic/categoryMagic');
 config = require('../../config/config.js')();
 
 // Export functions
@@ -8,7 +9,7 @@ module.exports = {
     // Get shop home page
     getHome: function(req, res) {
         // Get categories for top nav
-        dbProductMagic.getTopCategories(function(err, categories) {
+        dbCategoryMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Get featured products
@@ -33,7 +34,7 @@ module.exports = {
     getAbout: function(req, res) {
         
         // Get categories for top nav
-        dbProductMagic.getTopCategories(function(err, categories) {
+        dbCategoryMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render contact page
@@ -52,7 +53,7 @@ module.exports = {
     getContact: function(req, res) {
         
         // Get categories for top nav
-        dbProductMagic.getTopCategories(function(err, categories) {
+        dbCategoryMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
             
             // Render contact page

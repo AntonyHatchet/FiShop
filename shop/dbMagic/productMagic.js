@@ -17,17 +17,6 @@ module.exports = {
         });
     },
 
-
-    // Get categories for top nav
-    getTopCategories: function(callback){
-        var query = Category.find({topnav : true});
-        query.exec(function(err, categories) {
-            // Execute callback
-            callback(null, categories);
-        });
-    },
-
-
 // Get featured products
     getFeaturedProducts: function (callback) {
 
