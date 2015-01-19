@@ -4,7 +4,7 @@
 var User = require('../../schemas/userSchema');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
+var userGroup = require('../../schemas/userGroupSchema');
 
 // Passport methods
 passport.use(new LocalStrategy({usernameField: 'email'},function(email, password, done) {User.authenticate(email, password, function(err, user) {return done(err, user)})}));
@@ -80,11 +80,22 @@ getUsersListByRange: function (startFrom, limit, callback) {
     )
 },
 
-saveUsersGroup: function (callback) {
-    User.find({}, function (err, allUsersList) {
+saveUsersGroup: function (userGroupInfo, callback) {
+    var newUsersGroup = new userGroup ({
+        name : userGroupInfo.name,
+        permit: userGroupInfo.permitURL
+    });
+    // Save into database
+    newUsersGroup.save(function(err) {
+        if (err) {throw err;}
+        // Execute callback passed from route
+        callback(null, newUsersGroup);
+    });
+},
+
+    updateUsersGroup: function (name, permit) {
+        User.update ({name: name}, {permit : permit}, function(err){
             if (err) {throw err;}
-            callback(allUsersList);
-        }
-    )
-}
+        });
+    }
 };

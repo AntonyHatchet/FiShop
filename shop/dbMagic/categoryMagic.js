@@ -22,5 +22,19 @@ module.exports = {
             showcase: categoryInfo.showcase,
             showcasePosition: categoryInfo.showcasePosition
         })
+
+        newCategory.save(function(err) {
+            if (err) {throw err;}
+            // Execute callback passed from route
+            callback(null, newCategory);
+
+
+        });
+    },
+
+    removeCategory: function (categoryId) {
+        Category.remove ({_id: categoryId}, function(err){
+            if (err) {throw err;}
+        });
     }
 };

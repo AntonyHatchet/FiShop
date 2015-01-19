@@ -58,7 +58,7 @@ require('./shop/router')(app, passport);
 
 // Listen for requests
 app.listen(config.port);
-console.log('NodeShop v' + info.version + ' listening on port ' + config.port + ' in mode ' + config.mode);
+console.log('FiShop v' + info.version + ' listening on port ' + config.port + ' in mode ' + config.mode);
 
 // Handle all uncaught errors
 process.on('uncaughtException', function(err) {
