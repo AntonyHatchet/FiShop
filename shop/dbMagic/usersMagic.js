@@ -1,7 +1,7 @@
 /**
  * Created by enikshk on 19.01.2015.
  */
-var User = require('../../schemas/user');
+var User = require('../../schemas/userSchema');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 

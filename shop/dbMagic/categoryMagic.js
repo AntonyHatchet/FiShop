@@ -1,7 +1,7 @@
 /**
  * Created by enikshk on 19.01.2015.
  */
-var Category = require('../../schemas/category');
+var Category = require('../../schemas/categorySchema');
 
 module.exports = {
 // Get categories for top nav

@@ -1,19 +1,20 @@
 /**
  * Created by enikshk on 19.01.2015.
  */
-var Product = require('../../schemas/product');
-var Category = require('../../schemas/category');
+var Product = require('../../schemas/productSchema');
+var Category = require('../../schemas/categorySchema');
 
 module.exports = {
 
-//TODO: Переписать функцию сохранения продукта в каталоге
-    saveProduct: function (callback) {
-        Product.save(function (err) {
-            if (err) {
-                throw err;
-            }
+//TODO: Дописать функцию сохранения продукта в каталоге
+    saveProduct: function (productInfo, callback) {
+        var newProduct = new Product({
+            //Параметры продукта должны содержаться в productInfo
+        });
+        newProduct.save(function (err) {
+            if (err) {throw err;}
             // Execute callback passed from route
-            callback(null, Product, console.log(Product, 'err'));
+            callback(null, newProduct);
         });
     },
 
