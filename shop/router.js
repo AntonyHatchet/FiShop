@@ -12,7 +12,16 @@ var controlPanel = require('./routes/admin');
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     // Redirect if not authenticated
-    res.redirect('/account/login');
+    res.redirect('/modals/login');
+}
+
+function getUserRole(req, res, next) {
+    if (req.isAuthenticated()) {
+        //if (req.user.group == "admin")
+
+        return next();}
+    // Redirect if not authenticated
+    res.redirect('/modals/login');
 }
 
 // Export routes
@@ -24,8 +33,8 @@ module.exports = function(a, p) {
     a.get('/contact', main.getContact);
 
     // Control Panel routes
-    a.get('/admin/users', controlPanel.getControlPanelUsers);
-    a.get('/admin/dashboard', controlPanel.getControlPanelDashboard);
+    a.get('/admin/users', getUserRole, controlPanel.getControlPanelUsers);
+    a.get('/admin/dashboard', getUserRole, controlPanel.getControlPanelDashboard);
     
     // Modal routes
     a.get('/modals/register', modals.getRegister);
