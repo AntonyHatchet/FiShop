@@ -1,3 +1,8 @@
+*
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
 @import url("http://fonts.googleapis.com/css?family=Open\+Sans")
 
 body
@@ -7,11 +12,10 @@ body
   font-family: 'Open Sans', sans-serif
 
 @font-face
-    font-family: 'rouble';
-        src: url('../fonts/rouble-webfont.eot');
-        src: url('../fonts/rouble-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/rouble-webfont.woff') format('woff'),
-             url('../fonts/rouble-webfont.ttf') format('truetype');
+  font-family: 'rouble';
+  src: url("../fonts/rouble-webfont.eot");
+  src: url("../fonts/rouble-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/rouble-webfont.woff") format('woff'), url("../fonts/rouble-webfont.ttf") format('truetype');
+
 .rouble
   font-family: 'rouble';
 
@@ -24,72 +28,89 @@ body
   url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 
 .glyphicon
-  position relative
-  top 1px
-  display inline-block
-  font-family 'Glyphicons Halflings'
-  font-style normal
-  font-weight normal
-  line-height 1
-  font-size 2em
-  cursor pointer
-
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 2em;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
 .glyphicon-plus:before
-  content "\2b"
+  content: "\2b";
 
 .glyphicon-minus:before
-  content "\2212"
+  content: "\2212";
 
 .thumbnail h6 p
-    color #333
-
-.navbar
-    background-color #424A5D
+  color: #333;
 
 .container > a
-    margin-top 10px
-    margin-bottom 10px
-    align-items center
-    display flex
-    flex-direction row
-    justify-content center
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
 .cart-icon-remove
-    margin-right 3px
-    margin-top -20px
+  margin-right: 3px;
+  margin-top: -20px;
 
 .spinner
-  width 100px
+  width: 100px;
 
 .count
-  font-size 3em
-  font-weight bold
-  vertical-align baseline
-  width 30px
-  border none
-  text-align center
+  font-size: 3em;
+  font-weight: bold;
+  vertical-align: baseline;
+  width: 30px;
+  border: none;
+  text-align: center;
 
 .categories
- text-align center
- list-style outside none none
- position relative
+  text-align: center;
+  list-style: outside none none;
+  position: relative;
 
- li
-    overflow hidden
-    display  inline-table
-    margin 5.7px
 
- .small
-   width calc(20% - 13px)
-   background-color #CCFFCC
+/* clearfix */
+.categories:after
+    content: ' ';
+    display: block;
+    clear: both;
 
- .average
-   width calc(40% - 13px)
-   background-color #FFFFCC
 
- .big
-   width calc(60% - 13px)
-   background-color #CC66CC
+.item
+    width: 272.5px;
+    height: 198px;
+    float: left;
+    background: #C09;
+    overflow: hidden;
+
+
+.item:hover
+    border-color: white;
+    cursor: move;
+
+
+.item.w2 { width:  559px; background: #9C0; }
+.item.h2 { height: 411px; background: #0C9; }
+.item.h4 { height: 626px; background: #90C; }
+
+.item.is-dragging,
+.item.is-positioning-post-drag
+    border-color: white;
+    background: #09F;
+    z-index: 2;
+
+.navbar
+  background-color #424A5D;
+
+.logo
+  margin-bottom 15px;
+  margin-top 15px;

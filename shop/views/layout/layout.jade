@@ -7,7 +7,7 @@ html(lang="en")
   body
     .modal.hide.fade#modal
     .navbar.navbar-static-top
-        .navbar
+        .navbar-inverse
           .container-fluid
             ul.nav
               li
@@ -30,9 +30,9 @@ html(lang="en")
               include ../cart/cart
     .container-fluid
       a(href="/" , class="offset5")
-        img(src="/img/style/header.png")
-      .navbar
-        .navbar-inner
+        img(src="/img/style/header.png").logo
+      .navbar-inverse.navbar
+        .navbar-inner.second-nav
           ul.nav
             each category in categories
               li

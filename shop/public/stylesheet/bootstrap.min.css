@@ -3799,13 +3799,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
     min-height: 40px;
     padding-right: 20px;
     padding-left: 20px;
-    background-color: #fafafa;
-    background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#f2f2f2));
-    background-image: -webkit-linear-gradient(top, #fff, #f2f2f2);
-    background-image: -o-linear-gradient(top, #fff, #f2f2f2);
-    background-image: linear-gradient(to bottom, #fff, #f2f2f2);
-    background-repeat: repeat-x;
+    background-color: #424A5D;
     border: 1px solid #d4d4d4;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -4175,16 +4169,10 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse .navbar-inner {
-    background-color: #1b1b1b;
-    background-image: -moz-linear-gradient(top, #222, #111);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
-    background-image: -webkit-linear-gradient(top, #222, #111);
-    background-image: -o-linear-gradient(top, #222, #111);
-    background-image: linear-gradient(to bottom, #222, #111);
+    background-color: #424A5D;
     background-repeat: repeat-x;
     border-color: #252525;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0)
-}
+    }
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
     color: #999;
@@ -4256,7 +4244,8 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
-    transition: none
+    transition: none;
+    margin-top: 5px;
 }
 
 .navbar-inverse .navbar-search .search-query:-moz-placeholder {

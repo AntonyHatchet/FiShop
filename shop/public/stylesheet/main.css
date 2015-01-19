@@ -1,7 +1,7 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 @import url("http://fonts.googleapis.com/css?family=Open\+Sans");
 body {
@@ -73,34 +73,45 @@ body {
   list-style: outside none none;
   position: relative;
 }
-
 /* clearfix */
 .categories:after {
-    content: ' ';
-    display: block;
-    clear: both;
+  content: ' ';
+  display: block;
+  clear: both;
 }
-
 .item {
-    width: 272.5px;
-    height: 198px;
-    float: left;
-    background: #C09;
-    overflow: hidden;
+  width: 272.5px;
+  height: 198px;
+  float: left;
+  background: #c09;
+  overflow: hidden;
 }
-
 .item:hover {
-    border-color: white;
-    cursor: move;
+  border-color: #fff;
+  cursor: move;
 }
-
-.item.w2 { width:  559px; background: #9C0; }
-.item.h2 { height: 411px; background: #0C9; }
-.item.h4 { height: 626px; background: #90C; }
-
+.item.w2 {
+  width: 559px;
+  background: #9c0;
+}
+.item.h2 {
+  height: 411px;
+  background: #0c9;
+}
+.item.h4 {
+  height: 626px;
+  background: #90c;
+}
 .item.is-dragging,
 .item.is-positioning-post-drag {
-    border-color: white;
-    background: #09F;
-    z-index: 2;
+  border-color: #fff;
+  background: #09f;
+  z-index: 2;
+}
+.navbar {
+  background-color: #424a5d;
+}
+.logo {
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
