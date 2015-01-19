@@ -8,13 +8,19 @@ module.exports = {
 
     // Get shop home page
     getControlPanelUsers: function(req, res) {
-        // Get categories for top nav
-                // Render home page
+    // Render admin/users page
         dbUsersMagic.getAllUsersList(function(Users){
             res.render('admin/users', {
                 users: Users
             });
         })
+
+    },
+
+    getControlPanelDashboard: function(req, res) {
+        // Get categories for top nav
+        // Render home page
+        res.render('admin/dashboard', {});
 
     }
 };
