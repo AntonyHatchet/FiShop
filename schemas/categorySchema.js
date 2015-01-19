@@ -9,9 +9,11 @@ var CategorySchema = new Schema({
     seo: { type: String, required: true },
     topnav: { type: Boolean, required: false, default: true },
     image: { type: String},
-    showcase:{type: String, default: ""},
-    showcasePosition:{type: String, default: ""}
-    });
+    showcase: {
+        isShown:  {type: Boolean, required:true, default: false},
+        Position: {type: String, required:false}
+    }
+});
   
 // Export category model
 module.exports = mongoose.model('Category', CategorySchema);
