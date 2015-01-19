@@ -11,5 +11,16 @@ module.exports = {
             // Execute callback
             callback(null, categories);
         });
+    },
+
+    saveCategory: function (categoryInfo, callback){
+        var newCategory = new Category({
+            name: categoryInfo.name,
+            seo: categoryInfo.seo,
+            topnav: categoryInfo.topnav,
+            image: categoryInfo.image,
+            showcase: categoryInfo.showcase,
+            showcasePosition: categoryInfo.showcasePosition
+        })
     }
 };
