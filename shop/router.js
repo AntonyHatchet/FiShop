@@ -35,7 +35,7 @@ module.exports = function(a, p) {
     // Control Panel routes
     a.get('/admin/users', getUserRole, controlPanel.getControlPanelUsers);
     a.get('/admin/dashboard', getUserRole, controlPanel.getControlPanelDashboard);
-    a.get('/admin/login', getUserRole, controlPanel.getControlPanelLogin);
+    a.get('/admin/login', controlPanel.getControlPanelLogin);
     
     // Modal routes
     a.get('/modals/register', modals.getRegister);

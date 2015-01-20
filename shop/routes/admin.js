@@ -16,6 +16,7 @@ module.exports = {
         })
 
     },
+
     getControlPanelLogin: function(req, res) {
         res.render('admin/login');
     },
