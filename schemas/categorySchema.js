@@ -11,7 +11,8 @@ var CategorySchema = new Schema({
     image: { type: String},
     showcase: {
         isShown:  {type: Boolean, required:true, default: false},
-        Position: {type: String, required:false}
+        size: {type: String, required:false},
+        position: {type: String, required:false}
     }
 });
   

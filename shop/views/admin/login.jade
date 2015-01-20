@@ -1,10 +1,6 @@
 extends layout
-block content
-    section.container
-        .admin-login-header
-          a.close(data-dismiss="modal") &times;
-          h3 Log In
-        .admin-login-body
+block content2
+    section.container.admin-login
           form(action="/account/login", method="post").form-horizontal
             fieldset
                 br
@@ -18,6 +14,6 @@ block content
                         label.control-label(for="password") Password
                         .controls
                             input(type="password", name="password", placeholder="Password")
-        .modal-footer
-          a.btn(data-dismiss="modal") Close
-          a.btn.btn-primary(onclick="$('.modal-body > form').submit();") Log In
+          .admin-login-btn
+              a.btn(href="/") Close
+              a.btn.btn-primary(onclick="$('.admin-login > form').submit();") Log In

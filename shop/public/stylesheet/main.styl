@@ -86,21 +86,27 @@ body
 
 
 .item
-    width: 272.5px;
-    height: 198px;
-    float: left;
-    background: #C09;
+    width: 180px;
+    height: 175px;
     overflow: hidden;
-
 
 .item:hover
     border-color: white;
     cursor: move;
 
 
-.item.w2 { width:  559px; background: #9C0; }
-.item.h2 { height: 411px; background: #0C9; }
-.item.h4 { height: 626px; background: #90C; }
+.item.width-medium
+  width  360px
+
+.item.height-medium
+  height 350px
+
+.item.height-large
+  height 525px
+
+.item.width-large
+  width  540px
+
 
 .item.is-dragging,
 .item.is-positioning-post-drag
@@ -114,3 +120,10 @@ body
 .logo
   margin-bottom 15px;
   margin-top 15px;
+  text-align: center;
+
+.admin-login
+  margin-top 10vw
+
+.thumbnail
+  pointer-events none

@@ -2,9 +2,9 @@ extends ../layout/layout
 block content
   .wraper
       button.draganddrop drag
-      ul.categories
+      ul.categories.container
           each category in categories
-              li(class="item #{category.showcase}  #{category.showcasePosition}")
+              li(class="item #{category.showcase.size}", style="#{category.showcase.position}")
                   a(href="/category/#{category.seo}").thumbnail
                       img(src="#{category.image}", alt="")
   ul.thumbnails

@@ -2101,7 +2101,7 @@ label {
     /* Safari and Chrome */
     .panel-footer.revenue-foot {
         margin-bottom: -4px;
-    };
+    }
     }
 
 
@@ -2241,3 +2241,16 @@ label {
 }
 
 
+.admin-login {
+    padding-top: 5vw;
+}
+
+.controls input{
+    width: 20vw;
+    height: 2vw;
+}
+
+.admin-login-btn{
+    margin-left: 13.5vw;
+    margin-top: 1vw;
+}

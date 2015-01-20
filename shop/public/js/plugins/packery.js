@@ -4,12 +4,10 @@ var notifElem;
 $( function() {
 
     var $container = $('.categories').packery({
-        gutter:2,
-        columnWidth: 285,
-        rowHeight: 105
+        gutter:0,
+        columnWidth: 180,
+        rowHeight: 175
     });
-
-    notifElem = $('#notification')[0];
 
     $container.find('li').each( function( i, itemElem ) {
         // make element draggable with Draggabilly
