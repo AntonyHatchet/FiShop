@@ -16,11 +16,15 @@ module.exports = {
         })
 
     },
+    getControlPanelLogin: function(req, res) {
+        res.render('admin/login');
+    },
 
     getControlPanelDashboard: function(req, res) {
         // Get categories for top nav
         // Render home page
         res.render('admin/dashboard', {});
+
         //dbUsersMagic.findUsersGroupByID(req.user.group, function(data){
         //    if (!data){
         //        dbUsersMagic.getAllUsersList(function(Users){

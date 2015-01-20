@@ -21,7 +21,7 @@ function getUserRole(req, res, next) {
 
         return next();}
     // Redirect if not authenticated
-    res.redirect('/modals/login');
+    res.redirect('/admin/login');
 }
 
 // Export routes
@@ -35,6 +35,7 @@ module.exports = function(a, p) {
     // Control Panel routes
     a.get('/admin/users', getUserRole, controlPanel.getControlPanelUsers);
     a.get('/admin/dashboard', getUserRole, controlPanel.getControlPanelDashboard);
+    a.get('/admin/login', getUserRole, controlPanel.getControlPanelLogin);
     
     // Modal routes
     a.get('/modals/register', modals.getRegister);
