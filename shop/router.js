@@ -8,7 +8,7 @@ var category = require('./routes/category');
 var checkout = require('./routes/checkout');
 var controlPanel = require('./routes/admin');
 var dbUsersMagic = require('./dbMagic/usersMagic.js');
-
+var log = require('../lib/log')(module);
 
 // Function to only allow acess if authenticated
 function ensureAuthenticated(req, res, next) {
@@ -21,7 +21,6 @@ function ensureAuthenticated(req, res, next) {
       var ok = false;
       if (req.isAuthenticated()){
           dbUsersMagic.getUserGroup(req.user._id, function(group){
-              console.log(group.permit);
               group.permit.forEach(function(entry){
                   if (entry === req.url){
                       ok = true;

@@ -4,7 +4,7 @@
 
 var config = {
     local: {
-        mode: 'local',
+        mode: 'development',
         port: 3000,
         mongo: {
             host: 'mongodb://178.62.237.81:',
@@ -12,6 +12,7 @@ var config = {
             dbName: '/Shop',
             cookie_secret : "session secret"
         },
+        logLevel: "debug",
         store : {
             name : "FiShop",
             tagline : "A Node.JS and Express powered E-Commerce System",
@@ -30,6 +31,7 @@ var config = {
             dbName: '/Shop',
             cookie_secret: "session secret"
         },
+        logLevel: "debug",
         store: {
             name: "FiShop",
             tagline: "A Node.JS and Express powered E-Commerce System",
@@ -46,6 +48,7 @@ var config = {
             dbName: '/Shop',
             cookie_secret : "session secret"
         },
+        logLevel: "error",
         store : {
             name : "FiShop",
             tagline : "A Node.JS and Express powered E-Commerce System",

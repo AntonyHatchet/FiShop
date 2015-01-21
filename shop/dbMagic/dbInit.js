@@ -1,7 +1,7 @@
 // Require needed modules
 var mongoose = require('mongoose');
-// Require data models
-
+// Require logging models
+var log = require('../../lib/log')(module);
 // Export functions
 module.exports = {
 
@@ -13,12 +13,12 @@ module.exports = {
         
         // Add listener for opened connection
         mongoose.connection.on('open', function() {
-            console.log('Connected to database!',dbToUse);
+            log.info('Connected to database!',dbToUse);
         });
     },
 
     // Close DB connection
     closeDB: function() {
-        mongoose.disconnect(console.log('connect closed'));
+        mongoose.disconnect(log.info('connect closed'));
     }
 };

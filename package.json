@@ -20,7 +20,8 @@
     "xlsjs": "^0.7.2",
     "bcryptjs": "*",
     "body-parser": "*",
-    "packery":"*"
+    "packery":"*",
+    "winston": "*"
   },
   "devDependencies": {
     "gulp": "^3.8.10",

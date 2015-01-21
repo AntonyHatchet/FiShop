@@ -1,5 +1,6 @@
 // Require express
-console.log("Starting up...");
+var log = require('./lib/log')(module);
+log.info("Starting up...");
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
@@ -38,12 +39,11 @@ app.use(expressSession({
 // Set up passport
 app.use(passport.initialize());
 app.use(passport.session());
-
 // Define public assets
 app.use(express.static(__dirname + '/shop/public'));
 
 // Connect to database
-console.log('Connecting to database...');
+log.info('Connecting to database...');
 database.startup(config.mongo.host+config.mongo.port+config.mongo.dbName);
 
 
@@ -58,9 +58,9 @@ require('./shop/router')(app, passport);
 
 // Listen for requests
 app.listen(config.port);
-console.log('FiShop v' + info.version + ' listening on port ' + config.port + ' in mode ' + config.mode);
+log.info('FiShop v' + info.version + ' listening on port ' + config.port + ' in mode ' + config.mode);
 
 // Handle all uncaught errors
 process.on('uncaughtException', function(err) {
-    console.log(err);
+    log.info(err);
 });

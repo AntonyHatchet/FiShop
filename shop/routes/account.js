@@ -2,6 +2,7 @@ var dbCategoryMagic = require('../dbMagic/categoryMagic');
 var dbUsersMagic = require('../dbMagic/usersMagic.js');
 var config = require('../../config/config.js')();
 var passport = require('passport');
+var log = require('../../lib/log')(module);
 
 module.exports = {
 
@@ -16,7 +17,7 @@ module.exports = {
             }, 
              
             function(err, newUser) {
-                if (err) {console.log(err);}
+                if (err) {log.error(err);}
                 
                 // Set user to user just saved
                 req.user = newUser;
@@ -36,7 +37,7 @@ module.exports = {
         
         // Get categories for top nav
         dbCategoryMagic.getTopCategories(function(err, categories) {
-            if (err) {console.log(err)}
+            if (err) {log.error(err)}
             
             // Render registered page
             res.render('account/registered', {
@@ -54,7 +55,7 @@ module.exports = {
     getAccount: function(req, res) {
         // Get categories for top nav
         dbCategoryMagic.getTopCategories(function(err, categories) {
-            if (err) {console.log(err)}
+            if (err) {log.error(err)}
             
             // Render account page
             res.render('account/account', {
