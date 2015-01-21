@@ -24,7 +24,7 @@ module.exports = {
     getControlPanelDashboard: function(req, res) {
         // Get categories for top nav
         // Render home page
-        res.render('admin/dashboard', {});
+        res.render('admin/dashboard', {user: req.user});
 
         //dbUsersMagic.findUsersGroupByID(req.user.group, function(data){
         //    if (!data){

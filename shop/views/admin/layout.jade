@@ -33,14 +33,16 @@ html(lang='en')
                 .sidebar-toggle-box
                     .fa.fa-bars.tooltips(data-placement='right', data-original-title='Toggle Navigation')
                 // logo start
-                a.logo(href='index.html')
-                    b DASHGUM FREE
+                a.logo(href='dashboard')
+                    b SHARK SHOP ADMIN PANEL
                 // logo end
                 block content1
                 .top-menu
                     ul.nav.pull-right.top-menu
                         li
-                            a.logout(href='login.html') Exit
+                            a.logout(href='/', target="_blank") Open My Market
+                        li
+                            a.logout(href='/account/logout') Exit
             // header end
             //
               **********************************************************************************************************************************************************
@@ -54,11 +56,15 @@ html(lang='en')
                         p.centered
                             a(href='profile.html')
                                 img.img-circle(src='assets/img/ui-sam.jpg', width='60')
-                        h5.centered Marcel Newman
+                        h5.centered #{user.name.first} #{user.name.last}
                         li.mt
-                            a.active(href='index.html')
+                            a.active(href='dashboard')
                                 i.fa.fa-dashboard
                                 span Dashboard
+                        li.sub-menu
+                            a(href='users')
+                                i.fa.fa-users
+                                span Users
                         li.sub-menu
                             a(href='javascript:;')
                                 i.fa.fa-desktop
