@@ -7,6 +7,7 @@ var cart = require('./routes/cart');
 var category = require('./routes/category');
 var checkout = require('./routes/checkout');
 var controlPanel = require('./routes/admin');
+var dbUsersMagic = require('./dbMagic/usersMagic.js');
 
 // Function to only allow acess if authenticated
 function ensureAuthenticated(req, res, next) {
@@ -15,13 +16,18 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/modals/login');
 }
 
-function getUserRole(req, res, next) {
-    if (req.isAuthenticated()) {
-        //if (req.user.group == "admin")
-
-        return next();}
-    // Redirect if not authenticated
-    res.redirect('/admin/login');
+  function isPermit(req, res, next){
+      var ok = false;
+      if (req.isAuthenticated()){
+          dbUsersMagic.findUsersGroupByID(req.user.group, function(group){
+              group.permit.forEach(function(entry){
+                  if (entry === req.url){
+                      ok = true;
+                  }
+              });
+              !ok ? res.redirect('/admin/login') : next();
+          })
+      } else res.redirect('/admin/login');
 }
 
 // Export routes
@@ -33,8 +39,8 @@ module.exports = function(a, p) {
     a.get('/contact', main.getContact);
 
     // Control Panel routes
-    a.get('/admin/users', getUserRole, controlPanel.getControlPanelUsers);
-    a.get('/admin/dashboard', getUserRole, controlPanel.getControlPanelDashboard);
+    a.get('/admin/users', isPermit, controlPanel.getControlPanelUsers);
+    a.get('/admin/dashboard', isPermit, controlPanel.getControlPanelDashboard);
     a.get('/admin/login', controlPanel.getControlPanelLogin);
     
     // Modal routes
