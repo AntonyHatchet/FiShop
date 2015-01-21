@@ -11,7 +11,8 @@ module.exports = {
     // Render admin/users page
         dbUsersMagic.getAllUsersList(function(Users){
             res.render('admin/users', {
-                users: Users
+                users: Users,
+                user: req.user
             });
         })
 
