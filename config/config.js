@@ -14,7 +14,7 @@ var config = {
         },
         logLevel: "debug",
         store : {
-            name : "FiShop",
+            name : "FiShop alpha",
             tagline : "A Node.JS and Express powered E-Commerce System",
             owner : "Billy Topley"
         }
