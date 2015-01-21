@@ -9,6 +9,7 @@ var checkout = require('./routes/checkout');
 var controlPanel = require('./routes/admin');
 var dbUsersMagic = require('./dbMagic/usersMagic.js');
 
+
 // Function to only allow acess if authenticated
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
@@ -19,7 +20,8 @@ function ensureAuthenticated(req, res, next) {
   function isPermit(req, res, next){
       var ok = false;
       if (req.isAuthenticated()){
-          dbUsersMagic.findUsersGroupByID(req.user.group, function(group){
+          dbUsersMagic.getUserGroup(req.user._id, function(group){
+              console.log(group.permit);
               group.permit.forEach(function(entry){
                   if (entry === req.url){
                       ok = true;

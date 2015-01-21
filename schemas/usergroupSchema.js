@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 // Define category schema
 var UserGroupSchema = new Schema({
     name: { type: String, required: true },
+    users: [{ type: String, required: true }],
     permit: [{ type: String, required: true }]
 });
 
