@@ -4,17 +4,17 @@ block content
       button.draganddrop drag
       ul.categories.container
           each category in categories
-              li(class="item #{category.showcase.size}", style="#{category.showcase.position}")
+              li(class="item #{category.size}", style="#{category.position}")
                   a(href="/category/#{category.seo}").thumbnail
                       img(src="#{category.image}", alt="")
-  ul.thumbnails
-      each product in featured
-        li.span3
-          a(href="/product/#{product.seo}").thumbnail
-            img(src="#{product.image}", alt="")
-            h6 #{product.name}
-              p.pull-right #{product.cost}
-                  span.rouble i
+  //ul.thumbnails
+  //    each product in featured
+  //      li.span3
+  //        a(href="/product/#{product.seo}").thumbnail
+  //          img(src="#{product.image}", alt="")
+  //          h6 #{product.name}
+  //            p.pull-right #{product.cost}
+  //                span.rouble i
 block scripts
     script(src="/js/plugins/packery.pkgd.min.js")
     script(src="/js/plugins/draggabilly.pkgd.min.js")
