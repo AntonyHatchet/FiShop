@@ -36,11 +36,13 @@ module.exports = {
         });
     },
 
-    getShowcaseItem: function (showcaseName, callback) {
+    getShowcaseItems: function (showcaseName, callback) {
         // Find category for url
-        var query = Showcase.find({name: showcaseName});
+        var query = Showcase.findOne({name: showcaseName});
         query.exec(function (err, showcaseItems) {
             // Callback with error if error
+
+
             if (err) return callback(err);
             // Check if category exists
             if (!showcaseItems) {
@@ -48,11 +50,13 @@ module.exports = {
                 callback(new Error('Showcase Items not found!'));
                 // Continue if it does
             } else {
-                // Find products in given category
-                var productQuery = Product.find({category: category.name});
-                productQuery.exec(function (err, categoryProducts) {
-                    // Execute callback passed from route
-                    callback(err, categoryProducts, category.name);
+
+                showcaseItems.category.forEach(function(data){
+
+                    var query = Category.findOne({_id: data.item});
+                    query.exec(function(err, categories){
+                        callback(err, categories);
+                    })
                 });
             }
         });

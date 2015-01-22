@@ -10,7 +10,7 @@ var controlPanel = require('./routes/admin');
 var dbUsersMagic = require('./dbMagic/usersMagic.js');
 var log = require('../lib/log')(module);
 
-var dbShowcastMagic = require('./dbMagic/showcastMagic.js');
+var dbShowcastMagic = require('./dbMagic/showcaseMagic.js');
 
 // Function to only allow acess if authenticated
 function ensureAuthenticated(req, res, next) {
@@ -32,10 +32,6 @@ function ensureAuthenticated(req, res, next) {
           })
       } else res.redirect('/admin/login');
 }
-
-dbShowcastMagic.getShowcaseItem("test", function(){});
-
-
 
 // Export routes
 module.exports = function(a, p) {

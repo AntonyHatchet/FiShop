@@ -49,7 +49,7 @@ database.startup(config.mongo.host+config.mongo.port+config.mongo.dbName);
 
 // Configure Express
 //var env = process.env.NODE_ENV || 'development';
-if ('development' == app.get('env')) {
+if ('development' == config.mode) {
     app.use(errorhandler());
 }
 
@@ -62,5 +62,5 @@ log.info('FiShop v' + info.version + ' listening on port ' + config.port + ' in 
 
 // Handle all uncaught errors
 process.on('uncaughtException', function(err) {
-    log.info(err);
+    log.error(err.message);
 });
