@@ -35,9 +35,10 @@ html(lang='en')
                 a.logo(href='dashboard')
                     b SHARK SHOP ADMIN PANEL
                 // logo end
-                block content1
+                block dashboardTopInfo
                 .top-menu
                     ul.nav.pull-right.top-menu
+                        block constructorTopButton
                         li
                             a.logout(href='/', target="_blank") Open My Market
                         li
@@ -54,10 +55,10 @@ html(lang='en')
                     ul#nav-accordion.sidebar-menu
                         p.centered
                             a(href='profile.html')
-                                img.img-circle(src='assets/img/ui-sam.jpg', width='60')
+                                img.img-circle(src='/img/demo/ui-sam.jpg', width='60')
                         h5.centered #{user.name.first} #{user.name.last}
                         li.mt
-                            a.active(href='dashboard')
+                            a(href='dashboard')
                                 i.fa.fa-dashboard
                                 span Dashboard
                         li.sub-menu
@@ -70,11 +71,11 @@ html(lang='en')
                                 span UI Elements
                             ul.sub
                                 li
-                                    a(href='general.html') General
+                                    a(href='homeConstructor') Main Page Constructor
                                 li
-                                    a(href='buttons.html') Buttons
+                                    a(href='categoryConstructor') Category Constructor
                                 li
-                                    a(href='panels.html') Panels
+                                    a(href='productConstructor') Product Constructor
                         li.sub-menu
                             a(href='javascript:;')
                                 i.fa.fa-cogs
@@ -129,10 +130,12 @@ html(lang='en')
               MAIN CONTENT
               ***********************************************************************************************************************************************************
             // main content start
-            block content2
+            block dashboardContent
+            block constructorContent
+            block userContent
             // main content end
             // footer start
-            footer.site-footer.navbar-fixed-bottom
+            footer.site-footer
                 .text-center
                     | 2014 - Alvarez.is
                     a.go-top(href='#')
@@ -148,6 +151,7 @@ html(lang='en')
         script(src='/js/jquery.sparkline.js')
         // common script for all pages
         script(src='/js/common-scripts.js')
+        script(src='/js/zabuto_calendar.js')
         script(type='application/javascript').
           $(document).ready(function () {
           $("#date-popover").popover({html: true, trigger: "manual"});
@@ -162,13 +166,9 @@ html(lang='en')
           action_nav: function () {
           return myNavFunction(this.id);
           },
-          ajax: {
-          url: "show_data.php?action=1",
-          modal: true
-          },
           legend: [
           {type: "text", label: "Special event", badge: "00"},
-          {type: "block", label: "Regular event", }
+          {type: "block", label: "Regular event" }
           ]
           });
           });

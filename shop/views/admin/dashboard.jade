@@ -1,5 +1,5 @@
 extends layout
-block content1
+block dashboardTopInfo
     #top_menu.nav.notify-row
         // notification start
         ul.nav.top-menu
@@ -59,7 +59,7 @@ block content1
                     li
                         a(href='index.html#')
                             span.photo
-                                img(alt='avatar', src='assets/img/ui-zac.jpg')
+                                img(alt='avatar', src='/img/demo/ui-zac.jpg')
                             span.subject
                                 span.from Zac Snider
                                 span.time Just now
@@ -68,7 +68,7 @@ block content1
                     li
                         a(href='index.html#')
                             span.photo
-                                img(alt='avatar', src='assets/img/ui-divya.jpg')
+                                img(alt='avatar', src='/img/demo/ui-divya.jpg')
                             span.subject
                                 span.from Divya Manian
                                 span.time 40 mins.
@@ -77,7 +77,7 @@ block content1
                     li
                         a(href='index.html#')
                             span.photo
-                                img(alt='avatar', src='assets/img/ui-danro.jpg')
+                                img(alt='avatar', src='/img/demo/ui-danro.jpg')
                             span.subject
                                 span.from Dan Rogers
                                 span.time 2 hrs.
@@ -86,7 +86,7 @@ block content1
                     li
                         a(href='index.html#')
                             span.photo
-                                img(alt='avatar', src='assets/img/ui-sherman.jpg')
+                                img(alt='avatar', src='/img/demo/ui-sherman.jpg')
                             span.subject
                                 span.from Dj Sherman
                                 span.time 4 hrs.
@@ -96,7 +96,7 @@ block content1
                         a(href='index.html#') See all messages
             // inbox dropdown end
         // notification end
-block content2
+block dashboardContent
     section#main-content
         section.wrapper
             .row
@@ -164,7 +164,7 @@ block content2
                                             | 122
                                     .col-sm-6.col-xs-6
                                 .centered
-                                    img(src='assets/img/product.png', width='120')
+                                    img(src='/img/demo/product.png', width='120')
                         // /col-md-4
                         .col-md-4.mb
                             // WHITE PANEL - TOP USER
@@ -172,7 +172,7 @@ block content2
                                 .white-header
                                     h5 TOP USER
                                 p
-                                    img.img-circle(src='assets/img/ui-zac.jpg', width='80')
+                                    img.img-circle(src='/img/demo/ui-zac.jpg', width='80')
                                 p
                                     b Zac Snider
                                 .row
@@ -353,7 +353,7 @@ block content2
                     // First Member
                     .desc
                         .thumb
-                            img.img-circle(src='assets/img/ui-divya.jpg', width='35px', height='35px', align='')
+                            img.img-circle(src='/img/demo/ui-divya.jpg', width='35px', height='35px', align='')
                         .details
                             p
                                 a(href='#') DIVYA MANIAN
@@ -362,7 +362,7 @@ block content2
                     // Second Member
                     .desc
                         .thumb
-                            img.img-circle(src='assets/img/ui-sherman.jpg', width='35px', height='35px', align='')
+                            img.img-circle(src='/img/demo/ui-sherman.jpg', width='35px', height='35px', align='')
                         .details
                             p
                                 a(href='#') DJ SHERMAN
@@ -371,7 +371,7 @@ block content2
                     // Third Member
                     .desc
                         .thumb
-                            img.img-circle(src='assets/img/ui-danro.jpg', width='35px', height='35px', align='')
+                            img.img-circle(src='/img/demo/ui-danro.jpg', width='35px', height='35px', align='')
                         .details
                             p
                                 a(href='#') DAN ROGERS
@@ -380,7 +380,7 @@ block content2
                     // Fourth Member
                     .desc
                         .thumb
-                            img.img-circle(src='assets/img/ui-zac.jpg', width='35px', height='35px', align='')
+                            img.img-circle(src='/img/demo/ui-zac.jpg', width='35px', height='35px', align='')
                         .details
                             p
                                 a(href='#') Zac Sniders
@@ -389,7 +389,7 @@ block content2
                     // Fifth Member
                     .desc
                         .thumb
-                            img.img-circle(src='assets/img/ui-sam.jpg', width='35px', height='35px', align='')
+                            img.img-circle(src='/img/demo/ui-sam.jpg', width='35px', height='35px', align='')
                         .details
                             p
                                 a(href='#') Marcel Newman
@@ -406,4 +406,3 @@ block content2
                                 #my-calendar
                     // / calendar
                 // /col-lg-3
-block scripts
