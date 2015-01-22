@@ -33,6 +33,13 @@ function ensureAuthenticated(req, res, next) {
       } else res.redirect('/admin/login');
 }
 
+//dbShowcastMagic.saveShowcaseBlock("test2", "product", true, function(){});
+//dbShowcastMagic.addItemToShowcaseBlock("test2", "54b80f97f2ca1d5a59cf9f43");
+//dbShowcastMagic.addItemToShowcaseBlock("test2", "5486fa595f03d2a240126a21");
+dbShowcastMagic.getShowcase(function(data){
+
+});
+
 // Export routes
 module.exports = function(a, p) {
 

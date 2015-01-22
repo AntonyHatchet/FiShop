@@ -3,15 +3,16 @@
  */
 
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var Schema = mongoose.Schema,
+ObjectId = Schema.ObjectId;
 
 // Define category schema
-var ShowcaseSchema = new Schema({
+var ShowcaseBlockSchema = new Schema({
         name : {type: String, required: false},
-        category : [{
-            item : {type : String, required: false}
-        }]
+        type: {type: String, required: true},
+        visibility: {type: Boolean, required: false},
+        items: [ {itemId: {type: String, required: false}}]
 });
 
 // Export category model
-module.exports = mongoose.model('Showcase', ShowcaseSchema);
+module.exports = mongoose.model('ShowcaseBlock', ShowcaseBlockSchema);

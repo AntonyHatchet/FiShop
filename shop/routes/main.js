@@ -2,7 +2,7 @@
 var dbProductMagic = require('../dbMagic/productMagic');
 var dbCategoryMagic = require('../dbMagic/categoryMagic');
 var dbShowcaseMagic = require('../dbMagic/showcaseMagic');
-
+var log = require('../../lib/log')(module);
 config = require('../../config/config.js')();
 
 // Export functions
@@ -12,7 +12,7 @@ module.exports = {
     getHome: function(req, res) {
         dbCategoryMagic.getTopCategories(function(err, categories) {
         if (err) {console.log(err)}
-        dbShowcaseMagic.getShowcaseItems("test", function(err, showcaseItems){
+        dbShowcaseMagic.getShowcase(function(err, showcaseItems){
             if (err) {log.error(err.message)}
             res.render('main/home', {
                 store: config.store.name,

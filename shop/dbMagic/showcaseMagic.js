@@ -5,24 +5,26 @@
 /**
  * Created by enikshk on 19.01.2015.
  */
-var Showcase = require('../../schemas/showcaseSchema');
+var ShowcaseBlock = require('../../schemas/showcaseSchema');
 var Category = require('../../schemas/categorySchema');
 var log = require('../../lib/log')(module);
 
 module.exports = {
 
-// Get categories for top nav
-    getShowcase: function (name, callback) {
-        var query = Showcase.find({name: name});
-        query.exec(function (err, showcase) {
-            // Execute callback
-            callback(null, showcase);
-        });
-    },
+//// Get categories for top nav
+//    getShowcase: function (name, callback) {
+//        var query = Showcase.find({name: name});
+//        query.exec(function (err, showcase) {
+//            // Execute callback
+//            callback(null, showcase);
+//        });
+//    },
 
-    saveShowcase: function (name, callback){
-        var newShowcase = new Showcase({
-            name: name
+    saveShowcaseBlock: function (name, type, visibility, callback){
+        var newShowcase = new ShowcaseBlock({
+            name: name,
+            type : type,
+            visibility : visibility
         });
         newShowcase.save(function(err) {
             if (err) {throw err;}
@@ -30,42 +32,39 @@ module.exports = {
         });
     },
 
-    updateShowcase: function (name, itemId) {
-        Showcase.update ({name: name}, {$push:{category :{item : itemId}}}, function(err){
+    addItemToShowcaseBlock: function (name, itemId) {
+        ShowcaseBlock.update ({name: name}, {$push: {items : {item : itemId}}}, function(err){
             if (err) {throw err;}
         });
     },
 
-    getShowcaseItems: function (showcaseName, callback) {
-        // Find category for url
-        var query = Showcase.findOne({name: showcaseName});
-        query.exec(function (err, showcaseItems) {
-            // Callback with error if error
+    //getShowcaseItems : function(showcaseItems, callback){
+    //    console.log(showcaseItems, "showcase Items")
+    //},
 
-
+    getShowcase: function (callback) {
+        var query = ShowcaseBlock.find({visibility: true});
+        query.exec(function (err, showcaseBlocks) {
+            console.log(showcaseBlocks[0], "showcase Block 0'", showcaseBlocks[1], "showcase Block 1");
             if (err) return callback(err);
-            // Check if category exists
-            if (!showcaseItems) {
-                // Pass an error if not
-                callback(new Error('Showcase Items not found!'));
-                // Continue if it does
-            } else {
-
-                showcaseItems.category.forEach(function(data){
-
-                    var query = Category.findOne({_id: data.item});
-                    query.exec(function(err, categories){
-                        callback(err, categories);
-                    })
-                });
-            }
-        });
-    },
-
-
-    removeShowcase: function (categoryId) {
-        Showcase.remove ({_id: categoryId}, function(err){
-            if (err) {throw err;}
+            //if (!showcaseTest) {
+            //    callback(new Error('Showcase Items not found!'));
+            //} else {
+            //    showcaseTest.forEach(function(showcaseBlockData){
+            //        showcaseBlockData.items.forEach(function(data, i){
+            //            Category.findOne({_id: data.itemId}).exec(function (err, item) {
+            //
+            //            });
+            //        });
+            //    });
+            //}
         });
     }
+    //
+    //
+    //removeShowcase: function (name) {
+    //    Showcase.remove ({name: name}, function(err){
+    //        if (err) {throw err;}
+    //    });
+    //}
 };
