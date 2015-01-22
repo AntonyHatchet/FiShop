@@ -1,10 +1,9 @@
 extends ../layout/layout
 block content
   .wraper
-      button.draganddrop drag
-      ul.categories.container
+      ul.categories.container.draggable
           each category in categories
-              li(class="item #{category.size}", style="#{category.position}")
+              li(class="item #{category.size}", style="#{category.position}", tabindex="#{category.tabindex}")
                   a(href="/category/#{category.seo}").thumbnail
                       img(src="#{category.image}", alt="")
   //ul.thumbnails

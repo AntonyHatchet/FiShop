@@ -10,7 +10,8 @@ var CategorySchema = new Schema({
     topnav: { type: Boolean, required: false, default: true },
     image: { type: String},
     size: {type: String, required: false},
-    position: {type: String, required: false}
+    position: {type: String, required: false},
+    tabindex: {type: Number, required: true}
 });
   
 // Export category model

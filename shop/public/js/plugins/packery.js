@@ -1,10 +1,8 @@
-$( function() {
-
+$(document).ready(function() {
     var $container = $('.draggable').packery({
         gutter:0,
         columnWidth: 180,
-        rowHeight: 175,
-        isInitLayout: false
+        rowHeight: 175
     });
 
     var pckry = $container.data('packery');
@@ -60,6 +58,4 @@ $( function() {
 
     $container.packery( 'on', 'layoutComplete', orderItems );
     $container.packery( 'on', 'dragItemPositioned', orderItems );
-
-
 });
