@@ -1,7 +1,6 @@
 extends ../layout/layout
 block content
   .wraper
-      button.draganddrop drag
       ul.categories.container
           each category in showcase
               li(class="item #{category.size}", style="#{category.position}")

@@ -9,24 +9,6 @@ config = require('../../config/config.js')();
 module.exports = {
 
     // Get shop home page
-    //getHome: function(req, res) {
-    //    dbCategoryMagic.getTopCategories(function(err, categories) {
-    //    if (err) {console.log(err)}
-    //    dbShowcaseMagic.getShowcase(function(err, showcaseItems){
-    //        if (err) {log.error(err.message)}
-    //        res.render('main/home', {
-    //            store: config.store.name,
-    //            title: config.store.tagline,
-    //            logged: req.isAuthenticated(),
-    //            user: req.user,
-    //            cart: req.session.cart,
-    //            categories: categories,
-    //            showcaseItems: showcaseItems
-    //        });
-    //    });
-    //});
-    //},
-
     getHome: function(req, res) {
 // Get categories for top nav
         dbCategoryMagic.getTopCategories(function(err, categories) {

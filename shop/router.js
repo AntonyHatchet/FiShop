@@ -10,7 +10,7 @@ var controlPanel = require('./routes/admin');
 var dbUsersMagic = require('./dbMagic/usersMagic.js');
 var log = require('../lib/log')(module);
 
-var dbShowcastMagic = require('./dbMagic/showcaseMagic.js');
+var dbShowcaseMagic = require('./dbMagic/showcaseMagic.js');
 
 // Function to only allow acess if authenticated
 function ensureAuthenticated(req, res, next) {
@@ -36,9 +36,9 @@ function ensureAuthenticated(req, res, next) {
 //dbShowcastMagic.saveShowcaseBlock("test2", "product", true, function(){});
 //dbShowcastMagic.addItemToShowcaseBlock("test2", "54b80f97f2ca1d5a59cf9f43");
 //dbShowcastMagic.addItemToShowcaseBlock("test2", "5486fa595f03d2a240126a21");
-dbShowcastMagic.getShowcase(function(data){
-
-});
+//dbShowcastMagic.getShowcase(function(data){
+//
+//});
 
 // Export routes
 module.exports = function(a, p) {
@@ -51,6 +51,9 @@ module.exports = function(a, p) {
     // Control Panel routes
     a.get('/admin/users', isPermit, controlPanel.getControlPanelUsers);
     a.get('/admin/dashboard', isPermit, controlPanel.getControlPanelDashboard);
+    a.get('/admin/homeConstructor', isPermit, controlPanel.getControlPanelHomeConstructor);
+    a.get('/admin/categoryConstructor', isPermit, controlPanel.getControlPanelcategoryConstructor);
+    a.get('/admin/productConstructor', isPermit, controlPanel.getControlPanelproductConstructor);
     a.get('/admin/login', controlPanel.getControlPanelLogin);
     
     // Modal routes
