@@ -84,6 +84,8 @@ module.exports = function(a, p) {
                 });
         })(req, res, next);
     });
+    //Showcase
+    a.post('/showcase/sortOrder', showcase.sortOrder);
     
     // Category
     a.get('/category/:seo', category.getBySEO);
