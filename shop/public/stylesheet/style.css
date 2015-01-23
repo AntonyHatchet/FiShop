@@ -2266,3 +2266,7 @@ label {
     margin-left: 13.5vw;
     margin-top: 1vw;
 }
+
+.elemControl{
+    cursor: pointer;
+}
