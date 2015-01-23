@@ -54,10 +54,12 @@
                 sortOrder[i] = itemElems[i].getAttribute("tabindex");
             }
             // save tabindex ordering
+
             localStorage.setItem('sortOrder', JSON.stringify(sortOrder) );
         }
         $("#AddElement").click(function(){
-            $.post( "/showcase/sortOrder", storedSortOrder );
+            console.log(storedSortOrder);
+            $.post( "/showcase/sortOrder", {sort: storedSortOrder} );
         });
         $container.packery( 'on', 'layoutComplete', orderItems );
         $container.packery( 'on', 'dragItemPositioned', orderItems );
