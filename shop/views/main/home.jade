@@ -1,9 +1,9 @@
 extends ../layout/layout
 block content
   .wraper
-      ul.categories.container
+      ul.categories.container.showcase
           each category in showcase
-              li(class="item #{category.size}", style="#{category.position}")
+              li(class="item #{category.size}", style="#{category.position}", tabindex="#{category.tabindex}")
                   a(href="/category/#{category.seo}").thumbnail
                       img(src="#{category.image}", alt="")
   //ul.thumbnails
@@ -17,6 +17,6 @@ block content
 block scripts
     script(src="/js/plugins/packery.pkgd.min.js")
     script(src="/js/plugins/draggabilly.pkgd.min.js")
-    script(src="/js/plugins/packery.js")
+    script(src="/js/plugins/packeryShowcase.js")
 
   

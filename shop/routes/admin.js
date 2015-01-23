@@ -5,6 +5,7 @@
 var dbUsersMagic = require('../dbMagic/usersMagic.js');
 var dbProductMagic = require('../dbMagic/productMagic');
 var dbCategoryMagic = require('../dbMagic/categoryMagic');
+var dbShowcaseMagic = require('../dbMagic/showcaseMagic');
 
 module.exports = {
 
@@ -28,22 +29,24 @@ module.exports = {
         res.render('admin/dashboard', {user: req.user});
     },
     getControlPanelHomeConstructor: function(req, res) {
+        // Get categories for top nav
         dbCategoryMagic.getTopCategories(function(err, categories) {
             if (err) {console.log(err)}
-
-            // Get featured products
+// Get featured products
             dbProductMagic.getFeaturedProducts(function(err, featured) {
                 if (err) {console.log(err)}
-
-                // Render home page
-                res.render('admin/homeConstructor', {
-                    store: config.store.name,
-                    title: config.store.tagline,
-                    logged: req.isAuthenticated(),
-                    user: req.user,
-                    cart: req.session.cart,
-                    categories: categories,
-                    featured: featured
+// Render home page
+                dbShowcaseMagic.getShowcase(function(showcase){
+                    res.render('admin/homeConstructor', {
+                        store: config.store.name,
+                        title: config.store.tagline,
+                        logged: req.isAuthenticated(),
+                        user: req.user,
+                        cart: req.session.cart,
+                        categories: categories,
+                        featured: featured,
+                        showcase : showcase
+                    });
                 });
             });
         });

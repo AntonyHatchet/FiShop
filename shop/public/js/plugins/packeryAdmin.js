@@ -1,16 +1,17 @@
     $(document).ready(function() {
-        var $container = $('.draggable').packery({
+        var $container = $('.showcase').packery({
             gutter:0,
             columnWidth: 180,
-            rowHeight: 175
+            rowHeight: 175,
+            isInitLayout: false
         });
-
         var pckry = $container.data('packery');
 
         // ----- initial sort ----- //
 
         var sortOrder = []; // global variable for saving order, used later
         var storedSortOrder = localStorage.getItem('sortOrder');
+        console.log(storedSortOrder,'Порядок расположения');
         if ( storedSortOrder ) {
             storedSortOrder = JSON.parse( storedSortOrder );
             // create a hash of items by their tabindex
@@ -26,6 +27,7 @@
             for (; i < len; i++ ) {
                 tabIndex = storedSortOrder[i];
                 pckry.items[i] = itemsByTabIndex[ tabIndex ];
+                console.log(pckry.items[i]);
             }
         }
 

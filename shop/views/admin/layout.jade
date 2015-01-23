@@ -17,6 +17,9 @@ html(lang='en')
         link(href='/stylesheet/style.css', rel='stylesheet')
         link(href='/stylesheet/style-responsive.css', rel='stylesheet')
         script(src='/js/chart-master/Chart.js')
+        script(src='/js/jquery.js')
+        script(src='/js/jquery-1.8.3.min.js')
+        script(src='/js/bootstrap.min.js')
         // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
         //if lt IE 9
           script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
@@ -142,9 +145,6 @@ html(lang='en')
                         i.fa.fa-angle-up
             // footer end
         // js placed at the end of the document so the pages load faster
-        script(src='/js/jquery.js')
-        script(src='/js/jquery-1.8.3.min.js')
-        script(src='/js/bootstrap.min.js')
         script.include(type='text/javascript', src='/js/jquery.dcjqaccordion.2.7.js')
         script(src='/js/jquery.scrollTo.min.js')
         script(src='/js/jquery.nicescroll.js', type='text/javascript')
@@ -153,6 +153,7 @@ html(lang='en')
         // common script for all pages
         script(src='/js/common-scripts.js')
         script(src='/js/zabuto_calendar.js')
+        script(src="/js/plugins/packeryAdmin.js")
         script(type='application/javascript').
           $(document).ready(function () {
           $("#date-popover").popover({html: true, trigger: "manual"});
