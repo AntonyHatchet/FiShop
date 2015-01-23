@@ -35,14 +35,17 @@ module.exports = {
             dbProductMagic.getFeaturedProducts(function(err, featured) {
                 if (err) {console.log(err)}
 // Render home page
-                res.render('main/home', {
-                    store: config.store.name,
-                    title: config.store.tagline,
-                    logged: req.isAuthenticated(),
-                    user: req.user,
-                    cart: req.session.cart,
-                    categories: categories,
-                    featured: featured
+                dbShowcaseMagic.getShowcase(function(showcase){
+                    res.render('main/home', {
+                        store: config.store.name,
+                        title: config.store.tagline,
+                        logged: req.isAuthenticated(),
+                        user: req.user,
+                        cart: req.session.cart,
+                        categories: categories,
+                        featured: featured,
+                        showcase : showcase
+                    });
                 });
             });
         });

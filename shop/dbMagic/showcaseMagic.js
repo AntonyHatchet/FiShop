@@ -38,26 +38,24 @@ module.exports = {
         });
     },
 
-    //getShowcaseItems : function(showcaseItems, callback){
-    //    console.log(showcaseItems, "showcase Items")
-    //},
-
     getShowcase: function (callback) {
         var query = ShowcaseBlock.find({visibility: true});
         query.exec(function (err, showcaseBlocks) {
-            console.log(showcaseBlocks[0], "showcase Block 0'", showcaseBlocks[1], "showcase Block 1");
             if (err) return callback(err);
-            //if (!showcaseTest) {
-            //    callback(new Error('Showcase Items not found!'));
-            //} else {
-            //    showcaseTest.forEach(function(showcaseBlockData){
-            //        showcaseBlockData.items.forEach(function(data, i){
-            //            Category.findOne({_id: data.itemId}).exec(function (err, item) {
-            //
-            //            });
-            //        });
-            //    });
-            //}
+            if (!showcaseBlocks) {
+                callback(new Error('Showcase Items not found!'));
+            } else {
+
+                var showcaseItems = [];
+                for (var i = 0; i<showcaseBlocks.length; i++){
+                    for (s = 0; s<showcaseBlocks[i].items.length; s++){
+                        showcaseItems.push(showcaseBlocks[i].items[s].itemId);
+                    }
+                }
+                Category.find({'_id': { $in: showcaseItems}}, function(err, showcaseItems){
+                    callback(showcaseItems);
+                });
+            }
         });
     }
     //
