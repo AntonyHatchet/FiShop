@@ -3,7 +3,7 @@ block content
   .wraper
       button.draganddrop drag
       ul.categories.container
-          each category in categories
+          each category in showcase
               li(class="item #{category.size}", style="#{category.position}")
                   a(href="/category/#{category.seo}").thumbnail
                       img(src="#{category.image}", alt="")
