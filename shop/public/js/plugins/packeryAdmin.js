@@ -59,7 +59,7 @@
         }
         $("#AddElement").click(function(){
             console.log(storedSortOrder);
-            $.post( "/showcase/sortOrder", {sort: storedSortOrder} );
+            $.post( "/showcase/sortOrder", {sort : storedSortOrder} );
         });
         $container.packery( 'on', 'layoutComplete', orderItems );
         $container.packery( 'on', 'dragItemPositioned', orderItems );

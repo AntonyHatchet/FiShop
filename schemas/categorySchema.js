@@ -9,9 +9,13 @@ var CategorySchema = new Schema({
     seo: { type: String, required: true },
     topnav: { type: Boolean, required: false, default: true },
     image: { type: String},
-    size: {type: String, required: false},
-    position: {type: String, required: false},
-    tabindex: {type: Number, required: true}
+    showcase : {
+        showcaseID : {type: String, required: true},
+        size: {type: String, required: false},
+        position: {type: String, required: false},
+        tabindex: {type: Number, required: true}
+    }
+
 });
   
 // Export category model

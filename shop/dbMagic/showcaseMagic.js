@@ -45,12 +45,13 @@ module.exports = {
                         showcaseItems.push(showcaseBlocks[i].items[s].itemId);
                     }
                 }
+                console.log(showcaseItems);
                 Category.find({'_id': { $in: showcaseItems}}, function(err, showcaseItems){
                     callback(showcaseItems);
                 });
             }
         });
-    }
+    },
     //
     //
     //removeShowcase: function (name) {
@@ -58,4 +59,11 @@ module.exports = {
     //        if (err) {throw err;}
     //    });
     //}
+
+    updateShowcaseBlockView : function(data){
+        ShowcaseBlock.Update({name: "test"}, {$push: {items : {item : itemId}}}, function(err){
+            if (err) {throw err;}
+        });
+    }
+
 };
