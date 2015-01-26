@@ -12,7 +12,7 @@ var ShowcaseBlockSchema = new Schema({
         type: {type: String, required: true},
         visibility: {type: Boolean, required: false},
         items: [ {type: String, required: false}],
-        sort : { type: String, required: true}
+        sort : { type: String, required: false}
 });
 
 // Export category model

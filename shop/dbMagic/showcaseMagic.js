@@ -21,7 +21,7 @@ module.exports = {
     },
 
     addItemToShowcaseBlock: function (name, itemId) {
-        ShowcaseBlock.update ({name: name}, {$push: {items : {item : itemId}}}, function(err){
+        ShowcaseBlock.update ({name: name}, {$push: {items : itemId}}, function(err){
             if (err) {throw err;}
         });
     },
@@ -39,26 +39,20 @@ module.exports = {
             if (!showcaseBlocks) {
                 callback(new Error('Showcase Items not found!'));
             } else {
+
                 var showcaseItems = [];
                 for (var i = 0; i < showcaseBlocks.length; i++){
                     for (s = 0; s < showcaseBlocks[i].items.length; s++){
-                        showcaseItems.push(showcaseBlocks[i].items[s].itemId);
+                        showcaseItems.push(showcaseBlocks[i].items[s]);
                     }
                 }
-                console.log(showcaseItems);
                 Category.find({'_id': { $in: showcaseItems}}, function(err, showcaseItems){
                     callback(showcaseItems);
                 });
             }
         });
     },
-    //
-    //
-    //removeShowcase: function (name) {
-    //    Showcase.remove ({name: name}, function(err){
-    //        if (err) {throw err;}
-    //    });
-    //}
+
 
     updateShowcaseBlockView : function(data){
         ShowcaseBlock.Update({name: "test"}, {$push: {items : {item : itemId}}}, function(err){

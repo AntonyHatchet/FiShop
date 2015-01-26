@@ -19,3 +19,5 @@ database.startup(config.mongo.host+config.mongo.port+config.mongo.dbName);
 //});
 
 //dbShowcaseMagic.removeItemFromShowcaseBlock("test", "54bd4bd2f2ca1d5a59cf9f49")
+//dbShowcaseMagic.addItemToShowcaseBlock("test3", "54b80f2cf2ca1d5a59cf9f41");
+database.closeDB();
