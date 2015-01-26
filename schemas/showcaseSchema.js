@@ -11,7 +11,7 @@ var ShowcaseBlockSchema = new Schema({
         name : {type: String, required: false},
         type: {type: String, required: true},
         visibility: {type: Boolean, required: false},
-        items: [ {itemId: {type: String, required: false}}],
+        items: [ {type: String, required: false}],
         sort : { type: String, required: true}
 });
 
